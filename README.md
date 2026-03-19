@@ -64,17 +64,17 @@ Then open: `http://localhost:3847`
 ```bash
 OPENCLAW_DIR=~/.openclaw     # OpenClaw directory (default: ~/.openclaw)
 BACKUP_DIR=~/backups        # Backup location (default: ~/.openclaw/backups)
-PORT=3847                   # Web UI port (default: 3847)
+PORT=4000                   # Web UI port (default: 4000)
 ```
 
 ## Backup Contents
 
-Backups entire `.openclaw` directory with rsync, including:
+Backups entire `.openclaw` directory, including:
 
 - `openclaw.json` - Main config
 - `credentials/` - API keys & tokens
 - `agents/` - Agent configs
-- `workspace/` - Workspace files
+- `workspace*/*` - Workspace files
 - `telegram/` - Telegram session data
 - `cron/` - Scheduled tasks
 - `devices/` - Device configs
@@ -84,6 +84,7 @@ Backups entire `.openclaw` directory with rsync, including:
 - `completions/` - Shell completions
 - `media/` - Media files
 - `skills/` - Custom skills
+
 
 ## Systemd (Auto Start)
 
@@ -96,8 +97,8 @@ Description=OpenClaw Backup Server
 
 [Service]
 Type=simple
-WorkingDirectory=%h/.openclaw/workspace/scripts
-ExecStart=/usr/bin/node %h/.openclaw/workspace/scripts/backup-server.js
+WorkingDirectory=%h/.openclaw/openclaw-backup
+ExecStart=/usr/bin/node %h/.openclaw/openclaw-backup/backup-server.js
 Restart=on-failure
 
 [Install]
