@@ -15,7 +15,8 @@ Web UI และ CLI สำหรับ backup และ restore OpenClaw data
 ## Installation
 
 ```bash
-# Clone or copy to ~/.openclaw/workspace/scripts/
+# Clone or copy to ~/.openclaw/
+cd ~/.openclaw/
 git clone https://github.com/pumpithai/openclaw-backup.git
 cd openclaw-backup
 
