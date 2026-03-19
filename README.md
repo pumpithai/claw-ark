@@ -1,4 +1,4 @@
-# OpenClaw Backup 🗂️
+# OpenClaw Backup
 
 Web UI และ CLI สำหรับ backup และ restore OpenClaw data
 
