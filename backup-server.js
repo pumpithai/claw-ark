@@ -165,8 +165,11 @@ async function createBackup(type = 'manual', options = {}) {
     
     fs.mkdirSync(backupPath, { recursive: true });
     
-    const exclude = options.exclude || [];
+    const excludeFolders = options.exclude || [];
     const includeOnly = options.includeOnly || null;
+    const excludeExt = options.excludeExt || [];
+    const excludePrefix = options.excludePrefix || [];
+    const excludeSuffix = options.excludeSuffix || [];
     
     const foldersToProcess = [
         'openclaw.json', 'credentials', 'agents', 'workspace', 'telegram',
@@ -176,7 +179,7 @@ async function createBackup(type = 'manual', options = {}) {
     
     for (const item of foldersToProcess) {
         if (includeOnly && item !== includeOnly && item !== 'openclaw.json') continue;
-        if (exclude.includes(item)) continue;
+        if (excludeFolders.includes(item)) continue;
         
         const src = path.join(OPENCLAW_DIR, item);
         const dest = path.join(backupPath, item);
@@ -187,7 +190,12 @@ async function createBackup(type = 'manual', options = {}) {
             fs.copyFileSync(src, dest);
         } else {
             fs.mkdirSync(dest, { recursive: true });
-            copyDir(src, dest, item === 'workspace' ? ['.git', 'node_modules', '.openclaw'] : []);
+            copyDirWithPatterns(src, dest, {
+                alwaysExclude: item === 'workspace' ? ['.git', 'node_modules', '.openclaw'] : [],
+                excludeExt,
+                excludePrefix,
+                excludeSuffix
+            });
         }
     }
     
@@ -201,12 +209,55 @@ async function createBackup(type = 'manual', options = {}) {
         type, 
         excluded: options.exclude || [], 
         includedOnly: options.includeOnly || null,
+        excludeExt: options.excludeExt || [],
+        excludePrefix: options.excludePrefix || [],
+        excludeSuffix: options.excludeSuffix || [],
         created: new Date().toISOString() 
     }));
     
     cleanupBackups();
     
     return `${backupName}.tar.gz`;
+}
+
+// Copy directory with custom pattern exclusions
+function copyDirWithPatterns(src, dest, patterns = {}) {
+    if (!fs.existsSync(src)) return;
+    
+    const { alwaysExclude = [], excludeExt = [], excludePrefix = [], excludeSuffix = [] } = patterns;
+    
+    const shouldExclude = (name, isDir) => {
+        if (alwaysExclude.includes(name)) return true;
+        
+        if (isDir) {
+            if (excludePrefix.some(p => name.startsWith(p))) return true;
+            if (excludeSuffix.some(s => name.endsWith(s))) return true;
+        } else {
+            const lower = name.toLowerCase();
+            if (excludeExt.some(ext => lower.endsWith(ext.toLowerCase()))) return true;
+            if (excludePrefix.some(p => lower.startsWith(p.toLowerCase()))) return true;
+            if (excludeSuffix.some(s => lower.endsWith(s.toLowerCase()))) return true;
+        }
+        
+        return false;
+    };
+    
+    const items = fs.readdirSync(src);
+    for (const item of items) {
+        if (shouldExclude(item, false)) continue;
+        
+        const srcPath = path.join(src, item);
+        const destPath = path.join(dest, item);
+        const stat = fs.statSync(srcPath);
+        
+        if (stat.isDirectory()) {
+            if (shouldExclude(item, true)) continue;
+            fs.mkdirSync(destPath, { recursive: true });
+            copyDirWithPatterns(srcPath, destPath, patterns);
+        } else {
+            fs.copyFileSync(srcPath, destPath);
+        }
+    }
 }
 
 // Copy directory recursively
@@ -611,7 +662,13 @@ const server = http.createServer(async (req, res) => {
                 try {
                     const data = JSON.parse(body || '{}');
                     type = data.type || 'manual';
-                    options = { exclude: data.exclude, includeOnly: data.includeOnly };
+                    options = { 
+                        exclude: data.exclude, 
+                        includeOnly: data.includeOnly,
+                        excludeExt: data.excludeExt,
+                        excludePrefix: data.excludePrefix,
+                        excludeSuffix: data.excludeSuffix
+                    };
                 } catch (e) {
                     // Use default
                 }

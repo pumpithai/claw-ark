@@ -467,6 +467,28 @@
                 </div>
             </div>
             
+            <!-- Custom Patterns -->
+            <div class="card" style="margin-top:16px;background:rgba(255,255,255,0.03);">
+                <div class="card-title" style="margin-bottom:12px;">🎯 Custom Patterns</div>
+                
+                <div style="margin-bottom:12px;">
+                    <label style="display:block;font-size:0.8rem;color:#888;margin-bottom:4px;">Exclude by extension (e.g., .mp4, .log, .tmp)</label>
+                    <input type="text" id="excludeExt" placeholder=".mp4,.log,.tmp" style="width:100%;padding:8px;background:#1a1a2e;color:#fff;border:1px solid #333;border-radius:6px;" onkeyup="updatePatternSummary()">
+                </div>
+                
+                <div style="margin-bottom:12px;">
+                    <label style="display:block;font-size:0.8rem;color:#888;margin-bottom:4px;">Exclude folders starting with (e.g., temp_, cache_)</label>
+                    <input type="text" id="excludePrefix" placeholder="temp_, cache_" style="width:100%;padding:8px;background:#1a1a2e;color:#fff;border:1px solid #333;border-radius:6px;" onkeyup="updatePatternSummary()">
+                </div>
+                
+                <div>
+                    <label style="display:block;font-size:0.8rem;color:#888;margin-bottom:4px;">Exclude folders ending with (e.g., _bak, .bak)</label>
+                    <input type="text" id="excludeSuffix" placeholder="_bak, .bak" style="width:100%;padding:8px;background:#1a1a2e;color:#fff;border:1px solid #333;border-radius:6px;" onkeyup="updatePatternSummary()">
+                </div>
+                
+                <div id="patternSummary" style="margin-top:12px;padding:8px;background:rgba(0,217,255,0.1);border-radius:6px;font-size:0.8rem;color:var(--accent);display:none;"></div>
+            </div>
+            
             <div style="margin-top:16px;padding-top:16px;border-top:1px solid #333;">
                 <div style="display:flex;align-items:center;justify-content:space-between;">
                     <span style="color:#888;font-size:0.85rem;" id="selectedCount">0 folders selected</span>
@@ -634,6 +656,33 @@
                 count === 0 ? 'No folders selected' : `${count} folder${count > 1 ? 's' : ''} selected`;
         }
         
+        function updatePatternSummary() {
+            const ext = document.getElementById('excludeExt').value.trim();
+            const prefix = document.getElementById('excludePrefix').value.trim();
+            const suffix = document.getElementById('excludeSuffix').value.trim();
+            
+            const patterns = [];
+            if (ext) patterns.push(`Extensions: ${ext}`);
+            if (prefix) patterns.push(`Prefixes: ${prefix}`);
+            if (suffix) patterns.push(`Suffixes: ${suffix}`);
+            
+            const summary = document.getElementById('patternSummary');
+            if (patterns.length > 0) {
+                summary.innerHTML = patterns.join(' | ');
+                summary.style.display = 'block';
+            } else {
+                summary.style.display = 'none';
+            }
+        }
+        
+        function getCustomPatterns() {
+            return {
+                excludeExt: document.getElementById('excludeExt').value.split(',').map(s => s.trim()).filter(Boolean),
+                excludePrefix: document.getElementById('excludePrefix').value.split(',').map(s => s.trim()).filter(Boolean),
+                excludeSuffix: document.getElementById('excludeSuffix').value.split(',').map(s => s.trim()).filter(Boolean)
+            };
+        }
+        
         function showStatus(id, message, type) {
             const el = document.getElementById(id);
             el.className = `status show ${type}`;
@@ -664,6 +713,11 @@
                 options.includeOnly = Array.from(selectedFolders)[0];
             }
             
+            const patterns = getCustomPatterns();
+            if (patterns.excludeExt.length > 0) options.excludeExt = patterns.excludeExt;
+            if (patterns.excludePrefix.length > 0) options.excludePrefix = patterns.excludePrefix;
+            if (patterns.excludeSuffix.length > 0) options.excludeSuffix = patterns.excludeSuffix;
+            
             showStatus('uploadStatus', 'Creating backup...', 'loading');
             const progressBar = document.getElementById('progressBar');
             const progressFill = document.getElementById('progressFill');
@@ -681,9 +735,13 @@
                 progressFill.style.width = '100%';
                 
                 if (data.success) {
-                    const optText = options.exclude ? `(excluded: ${options.exclude.join(', ')})` 
-                        : options.includeOnly ? `(included only: ${options.includeOnly})` 
-                        : '(full backup)';
+                    const parts = [];
+                    if (options.exclude) parts.push(`excluded: ${options.exclude.join(', ')}`);
+                    if (options.includeOnly) parts.push(`included: ${options.includeOnly}`);
+                    if (patterns.excludeExt.length > 0) parts.push(`no ext: ${patterns.excludeExt.join(', ')}`);
+                    if (patterns.excludePrefix.length > 0) parts.push(`no prefix: ${patterns.excludePrefix.join(', ')}`);
+                    if (patterns.excludeSuffix.length > 0) parts.push(`no suffix: ${patterns.excludeSuffix.join(', ')}`);
+                    const optText = parts.length > 0 ? `(${parts.join(' | ')})` : '(full backup)';
                     showToast(`✅ Backup created: ${data.filename} ${optText}`);
                     showStatus('uploadStatus', '', '');
                 } else {
