@@ -18,7 +18,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 BACKUP_DIR="$HOME/.openclaw/backups"
 
 # Default port
-PORT=${1:-3847}
+PORT=${1:-4000}
 
 echo "🔧 OpenClaw Backup Installer"
 echo "============================"
