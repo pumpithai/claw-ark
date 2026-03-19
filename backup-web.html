@@ -435,6 +435,46 @@
             <button class="btn btn-secondary" onclick="refreshBackups()">
                 🔄 Refresh
             </button>
+            <button class="btn btn-secondary" onclick="toggleOptions()" id="optionsBtn">
+                ⚙️ Options
+            </button>
+        </div>
+        
+        <!-- Backup Options Panel -->
+        <div class="card" id="optionsPanel" style="display:none;">
+            <div class="card-header">
+                <div class="card-title">📁 Backup Options</div>
+            </div>
+            <div style="margin-bottom:16px;">
+                <label style="display:block;margin-bottom:8px;font-size:0.9rem;">Backup Mode:</label>
+                <div style="display:flex;gap:8px;">
+                    <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+                        <input type="radio" name="backupMode" value="full" checked onchange="updateBackupMode()"> Full Backup
+                    </label>
+                    <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+                        <input type="radio" name="backupMode" value="exclude" onchange="updateBackupMode()"> Exclude Folders
+                    </label>
+                    <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+                        <input type="radio" name="backupMode" value="include" onchange="updateBackupMode()"> Include Only
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Exclude/Include Selection -->
+            <div id="folderSelection" style="display:none;">
+                <label style="display:block;margin-bottom:8px;font-size:0.9rem;" id="folderSelectionLabel">Select folders to exclude:</label>
+                <div id="folderCheckboxes" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;">
+                </div>
+            </div>
+            
+            <div style="margin-top:16px;padding-top:16px;border-top:1px solid #333;">
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                    <span style="color:#888;font-size:0.85rem;" id="selectedCount">0 folders selected</span>
+                    <button class="btn btn-sm" style="background:var(--accent);color:var(--bg-primary);" onclick="createBackup()">
+                        ✅ Apply & Backup
+                    </button>
+                </div>
+            </div>
         </div>
         
         <div class="progress-bar" id="progressBar">
@@ -534,6 +574,66 @@
             setTimeout(() => toast.remove(), 4000);
         }
         
+        let selectedFolders = new Set();
+        const AVAILABLE_FOLDERS = [
+            'workspace', 'media', 'telegram', 'memory', 'canvas', 
+            'skills', 'credentials', 'agents', 'devices', 'identity',
+            'completions', 'cache', 'logs', 'backups', 'cron'
+        ];
+        
+        function toggleOptions() {
+            const panel = document.getElementById('optionsPanel');
+            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+            if (panel.style.display === 'block') {
+                loadFolderCheckboxes();
+            }
+        }
+        
+        function updateBackupMode() {
+            const mode = document.querySelector('input[name="backupMode"]:checked').value;
+            const selection = document.getElementById('folderSelection');
+            const label = document.getElementById('folderSelectionLabel');
+            
+            selectedFolders.clear();
+            
+            if (mode === 'full') {
+                selection.style.display = 'none';
+            } else {
+                selection.style.display = 'block';
+                label.textContent = mode === 'exclude' 
+                    ? 'Select folders to exclude:' 
+                    : 'Select folders to include:';
+            }
+            loadFolderCheckboxes();
+            updateSelectedCount();
+        }
+        
+        function loadFolderCheckboxes() {
+            const container = document.getElementById('folderCheckboxes');
+            container.innerHTML = AVAILABLE_FOLDERS.map(folder => `
+                <label style="display:flex;align-items:center;gap:8px;padding:8px;background:rgba(255,255,255,0.05);border-radius:6px;cursor:pointer;">
+                    <input type="checkbox" value="${folder}" onchange="toggleFolder('${folder}')" ${selectedFolders.has(folder) ? 'checked' : ''}>
+                    ${folder}
+                </label>
+            `).join('');
+        }
+        
+        function toggleFolder(folder) {
+            if (selectedFolders.has(folder)) {
+                selectedFolders.delete(folder);
+            } else {
+                selectedFolders.add(folder);
+            }
+            updateSelectedCount();
+            loadFolderCheckboxes();
+        }
+        
+        function updateSelectedCount() {
+            const count = selectedFolders.size;
+            document.getElementById('selectedCount').textContent = 
+                count === 0 ? 'No folders selected' : `${count} folder${count > 1 ? 's' : ''} selected`;
+        }
+        
         function showStatus(id, message, type) {
             const el = document.getElementById(id);
             el.className = `status show ${type}`;
@@ -555,6 +655,15 @@
         }
         
         async function createBackup() {
+            const mode = document.querySelector('input[name="backupMode"]:checked').value;
+            let options = {};
+            
+            if (mode === 'exclude' && selectedFolders.size > 0) {
+                options.exclude = Array.from(selectedFolders);
+            } else if (mode === 'include' && selectedFolders.size > 0) {
+                options.includeOnly = Array.from(selectedFolders)[0];
+            }
+            
             showStatus('uploadStatus', 'Creating backup...', 'loading');
             const progressBar = document.getElementById('progressBar');
             const progressFill = document.getElementById('progressFill');
@@ -562,13 +671,20 @@
             progressFill.style.width = '30%';
             
             try {
-                const response = await fetch(`${API_BASE}/create`, { method: 'POST' });
+                const response = await fetch(`${API_BASE}/create`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(options)
+                });
                 progressFill.style.width = '80%';
                 const data = await response.json();
                 progressFill.style.width = '100%';
                 
                 if (data.success) {
-                    showToast(`✅ Backup created: ${data.filename}`);
+                    const optText = options.exclude ? `(excluded: ${options.exclude.join(', ')})` 
+                        : options.includeOnly ? `(included only: ${options.includeOnly})` 
+                        : '(full backup)';
+                    showToast(`✅ Backup created: ${data.filename} ${optText}`);
                     showStatus('uploadStatus', '', '');
                 } else {
                     showStatus('uploadStatus', `❌ Error: ${data.error}`, 'error');

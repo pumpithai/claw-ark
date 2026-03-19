@@ -155,121 +155,55 @@ function formatSize(bytes) {
 }
 
 // Create backup
-async function createBackup(type = 'manual') {
+async function createBackup(type = 'manual', options = {}) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-    const backupName = `openclaw_${type}_backup_${timestamp}`;
+    const suffix = options.exclude ? `_excl_${options.exclude.join('-')}` 
+        : options.includeOnly ? `_only_${options.includeOnly}` 
+        : '';
+    const backupName = `openclaw_${type}_backup_${timestamp}${suffix}`;
     const backupPath = path.join(BACKUP_DIR, backupName);
     
-    // Create temp backup folder
     fs.mkdirSync(backupPath, { recursive: true });
     
-    // Copy OpenClaw config
-    const configSrc = path.join(OPENCLAW_DIR, 'openclaw.json');
-    if (fs.existsSync(configSrc)) {
-        fs.copyFileSync(configSrc, path.join(backupPath, 'openclaw.json'));
+    const exclude = options.exclude || [];
+    const includeOnly = options.includeOnly || null;
+    
+    const foldersToProcess = [
+        'openclaw.json', 'credentials', 'agents', 'workspace', 'telegram',
+        'cron', 'devices', 'identity', 'memory', 'canvas', 'completions',
+        'media', 'skills', 'backups'
+    ];
+    
+    for (const item of foldersToProcess) {
+        if (includeOnly && item !== includeOnly && item !== 'openclaw.json') continue;
+        if (exclude.includes(item)) continue;
+        
+        const src = path.join(OPENCLAW_DIR, item);
+        const dest = path.join(backupPath, item);
+        
+        if (!fs.existsSync(src)) continue;
+        
+        if (item === 'openclaw.json') {
+            fs.copyFileSync(src, dest);
+        } else {
+            fs.mkdirSync(dest, { recursive: true });
+            copyDir(src, dest, item === 'workspace' ? ['.git', 'node_modules', '.openclaw'] : []);
+        }
     }
     
-    // Copy workspace (exclude git, node_modules)
-    const workspaceSrc = path.join(OPENCLAW_DIR, 'workspace');
-    const workspaceDest = path.join(backupPath, 'workspace');
-    fs.mkdirSync(workspaceDest, { recursive: true });
-    
-    if (fs.existsSync(workspaceSrc)) {
-        copyDir(workspaceSrc, workspaceDest, ['.git', 'node_modules', '.openclaw']);
-    }
-    
-    // Copy credentials (masked)
-    const credsSrc = path.join(OPENCLAW_DIR, 'credentials');
-    const credsDest = path.join(backupPath, 'credentials');
-    if (fs.existsSync(credsSrc)) {
-        fs.mkdirSync(credsDest, { recursive: true });
-        copyDir(credsSrc, credsDest);
-    }
-    
-    // Copy agents
-    const agentsSrc = path.join(OPENCLAW_DIR, 'agents');
-    const agentsDest = path.join(backupPath, 'agents');
-    if (fs.existsSync(agentsSrc)) {
-        fs.mkdirSync(agentsDest, { recursive: true });
-        copyDir(agentsSrc, agentsDest);
-    }
-    
-    // Copy telegram
-    const telegramSrc = path.join(OPENCLAW_DIR, 'telegram');
-    const telegramDest = path.join(backupPath, 'telegram');
-    if (fs.existsSync(telegramSrc)) {
-        fs.mkdirSync(telegramDest, { recursive: true });
-        copyDir(telegramSrc, telegramDest);
-    }
-    
-    // Copy cron
-    const cronSrc = path.join(OPENCLAW_DIR, 'cron');
-    const cronDest = path.join(backupPath, 'cron');
-    if (fs.existsSync(cronSrc)) {
-        fs.mkdirSync(cronDest, { recursive: true });
-        copyDir(cronSrc, cronDest);
-    }
-    
-    // Copy devices
-    const devicesSrc = path.join(OPENCLAW_DIR, 'devices');
-    const devicesDest = path.join(backupPath, 'devices');
-    if (fs.existsSync(devicesSrc)) {
-        fs.mkdirSync(devicesDest, { recursive: true });
-        copyDir(devicesSrc, devicesDest);
-    }
-    
-    // Copy identity
-    const identitySrc = path.join(OPENCLAW_DIR, 'identity');
-    const identityDest = path.join(backupPath, 'identity');
-    if (fs.existsSync(identitySrc)) {
-        fs.mkdirSync(identityDest, { recursive: true });
-        copyDir(identitySrc, identityDest);
-    }
-    
-    // Copy memory
-    const memorySrc = path.join(OPENCLAW_DIR, 'memory');
-    const memoryDest = path.join(backupPath, 'memory');
-    if (fs.existsSync(memorySrc)) {
-        fs.mkdirSync(memoryDest, { recursive: true });
-        copyDir(memorySrc, memoryDest);
-    }
-    
-    // Copy canvas
-    const canvasSrc = path.join(OPENCLAW_DIR, 'canvas');
-    const canvasDest = path.join(backupPath, 'canvas');
-    if (fs.existsSync(canvasSrc)) {
-        fs.mkdirSync(canvasDest, { recursive: true });
-        copyDir(canvasSrc, canvasDest);
-    }
-    
-    // Copy completions
-    const completionsSrc = path.join(OPENCLAW_DIR, 'completions');
-    const completionsDest = path.join(backupPath, 'completions');
-    if (fs.existsSync(completionsSrc)) {
-        fs.mkdirSync(completionsDest, { recursive: true });
-        copyDir(completionsSrc, completionsDest);
-    }
-    
-    // Copy media
-    const mediaSrc = path.join(OPENCLAW_DIR, 'media');
-    const mediaDest = path.join(backupPath, 'media');
-    if (fs.existsSync(mediaSrc)) {
-        fs.mkdirSync(mediaDest, { recursive: true });
-        copyDir(mediaSrc, mediaDest);
-    }
-    
-    // Create tar.gz
     const tarPath = path.join(BACKUP_DIR, `${backupName}.tar.gz`);
     await execPromise(`tar -czf "${tarPath}" -C "${BACKUP_DIR}" "${backupName}"`);
     
-    // Clean up temp folder
     fs.rmSync(backupPath, { recursive: true });
     
-    // Save backup metadata
     const metaPath = path.join(BACKUP_DIR, `${backupName}.json`);
-    fs.writeFileSync(metaPath, JSON.stringify({ type, created: new Date().toISOString() }));
+    fs.writeFileSync(metaPath, JSON.stringify({ 
+        type, 
+        excluded: options.exclude || [], 
+        includedOnly: options.includeOnly || null,
+        created: new Date().toISOString() 
+    }));
     
-    // Cleanup old backups
     cleanupBackups();
     
     return `${backupName}.tar.gz`;
@@ -673,13 +607,15 @@ const server = http.createServer(async (req, res) => {
             req.on('data', chunk => body += chunk);
             req.on('end', async () => {
                 let type = 'manual';
+                let options = {};
                 try {
                     const data = JSON.parse(body || '{}');
                     type = data.type || 'manual';
+                    options = { exclude: data.exclude, includeOnly: data.includeOnly };
                 } catch (e) {
                     // Use default
                 }
-                const filename = await createBackup(type);
+                const filename = await createBackup(type, options);
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ success: true, filename }));
             });
