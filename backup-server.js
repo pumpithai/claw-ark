@@ -622,6 +622,133 @@ const server = http.createServer(async (req, res) => {
             return;
         }
         
+        // POST /api/backup/transfer
+        if (req.method === 'POST' && pathname === '/api/backup/transfer') {
+            let body = '';
+            req.on('data', chunk => body += chunk);
+            req.on('end', async () => {
+                try {
+                    const { target, destPath, password, openclawInstalled } = JSON.parse(body);
+                    
+                    if (!target || !password) {
+                        res.writeHead(400, { 'Content-Type': 'application/json' });
+                        res.end(JSON.stringify({ success: false, error: 'Missing target or password' }));
+                        return;
+                    }
+                    
+                    log('info', `Starting transfer to ${target}:${destPath}`);
+                    
+                    const patterns = allConfig.patterns || [];
+                    let excludeOpts = '--exclude=.git --exclude=node_modules --exclude=backups --exclude=*.log';
+                    for (const p of patterns) {
+                        if (p.startsWith('.')) {
+                            excludeOpts += ` --exclude='*${p}'`;
+                        } else if (p.startsWith('*')) {
+                            excludeOpts += ` --exclude='*${p.slice(1)}'`;
+                        } else if (p.endsWith('*')) {
+                            excludeOpts += ` --exclude='${p.slice(0, -1)}*'`;
+                        } else if (p.includes('*')) {
+                            excludeOpts += ` --exclude='${p}'`;
+                        } else {
+                            excludeOpts += ` --exclude='${p}' --exclude='${p}/*'`;
+                        }
+                    }
+                    
+                    // Step 0: Check if openclaw is installed on remote
+                    if (!openclawInstalled) {
+                        log('info', 'Installing openclaw on remote...');
+                        try {
+                            const installCmd = `sshpass -p '${password}' ssh ${target} "npm install -g openclaw"`;
+                            await execPromise(installCmd);
+                            log('info', 'Openclaw installed successfully');
+                        } catch (e) {
+                            let safeError = e.message.replace(/-p '[^']*'/g, "-p '******'");
+                            log('error', `Failed to install openclaw: ${safeError}`);
+                            res.writeHead(200, { 'Content-Type': 'application/json' });
+                            res.end(JSON.stringify({ success: false, error: `Failed to install openclaw: ${safeError}` }));
+                            return;
+                        }
+                    } else {
+                        log('info', 'Openclaw already installed, skipping...');
+                    }
+                    
+                    // Step 1: Transfer files
+                    log('info', 'Transferring files...');
+                    const rsyncCmd = `sshpass -p '${password}' rsync -avzP ${excludeOpts} ~/.openclaw ${target}:${destPath}`;
+                    try {
+                        await execPromise(rsyncCmd);
+                    } catch (e) {
+                        let safeError = e.message.replace(/-p '[^']*'/g, "-p '******'");
+                        log('error', `Transfer failed: ${safeError}`);
+                        res.writeHead(200, { 'Content-Type': 'application/json' });
+                        res.end(JSON.stringify({ success: false, error: safeError }));
+                        return;
+                    }
+                    log('info', 'Files transferred successfully');
+                    
+                    // Step 2: Update config paths
+                    log('info', 'Updating config paths...');
+                    const remoteHome = destPath.replace('~', '/home/' + target.split('@')[0]);
+                    const updateCmd = `sshpass -p '${password}' ssh ${target} "sed -i 's|/home/[^/]*|${remoteHome}|g' ~/.openclaw/openclaw.json"`;
+                    try {
+                        await execPromise(updateCmd);
+                    } catch (e) {
+                        log('warn', 'Failed to update config paths, continuing...');
+                    }
+                    log('info', 'Config paths updated');
+                    
+                    // Step 3: Change ownership
+                    log('info', 'Changing ownership...');
+                    const user = target.split('@')[0];
+                    const chownCmd = `sshpass -p '${password}' ssh ${target} "chown -R ${user}:${user} ${destPath.replace('~', '/home/' + user)}"`;
+                    try {
+                        await execPromise(chownCmd);
+                    } catch (e) {
+                        log('warn', 'Failed to change ownership, continuing...');
+                    }
+                    log('info', 'Ownership changed');
+                    
+                    // Step 4: Run openclaw doctor --fix
+                    log('info', 'Running openclaw doctor --fix...');
+                    try {
+                        const doctorCmd = `sshpass -p '${password}' ssh ${target} "openclaw doctor --fix"`;
+                        await execPromise(doctorCmd);
+                    } catch (e) {
+                        log('warn', 'Doctor --fix failed, continuing...');
+                    }
+                    log('info', 'Doctor --fix completed');
+                    
+                    // Step 5: Restart gateway
+                    log('info', 'Checking OS for gateway restart...');
+                    try {
+                        const osCmd = `sshpass -p '${password}' ssh ${target} "uname -s"`;
+                        const osOutput = await execPromise(osCmd);
+                        
+                        if (osOutput.includes('Darwin')) {
+                            log('info', 'Restarting gateway (macOS)...');
+                            await execPromise(`sshpass -p '${password}' ssh ${target} "openclaw gateway restart"`);
+                        } else {
+                            log('info', 'Restarting gateway (systemd)...');
+                            await execPromise(`sshpass -p '${password}' ssh ${target} "systemctl --user restart openclaw-gateway.service"`);
+                        }
+                    } catch (e) {
+                        log('warn', 'Gateway restart failed, continuing...');
+                    }
+                    log('info', 'Gateway restarted');
+                    
+                    log('info', `Transfer completed to ${target}`);
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ success: true, message: `Transferred to ${target}:${destPath}` }));
+                } catch (e) {
+                    let safeError = e.message.replace(/-p '[^']*'/g, "-p '******'");
+                    log('error', `Transfer failed: ${safeError}`);
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ success: false, error: safeError }));
+                }
+            });
+            return;
+        }
+        
         // GET /api/backup/download/:filename
         if (req.method === 'GET' && pathname.startsWith('/api/backup/download/')) {
             const filename = pathname.split('/').pop();
@@ -727,6 +854,24 @@ const server = http.createServer(async (req, res) => {
             eventLog = [];
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ success: true }));
+            return;
+        }
+        
+        // POST /api/backup/log
+        if (req.method === 'POST' && pathname === '/api/backup/log') {
+            let body = '';
+            req.on('data', chunk => body += chunk);
+            req.on('end', () => {
+                try {
+                    const { level, message } = JSON.parse(body);
+                    log(level || 'info', message);
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ success: true }));
+                } catch (e) {
+                    res.writeHead(400, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ success: false, error: e.message }));
+                }
+            });
             return;
         }
         

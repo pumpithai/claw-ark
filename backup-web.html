@@ -39,9 +39,9 @@
         }
         
         header {
-            padding: 20px 0;
+            padding-bottom: 20px;
             border-bottom: 1px solid var(--border);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         .header-title {
@@ -355,6 +355,23 @@
             transition: width 0.3s;
         }
         
+        .transfer-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .transfer-bar .form-input {
+            padding: 6px 10px;
+            font-size: 12px;
+        }
+        
         footer {
             margin-top: 40px;
             padding: 20px 0;
@@ -537,7 +554,6 @@
         .backup-actions { margin-left: auto; }
     </style>
 </head>
-<body>    
     <div class="container">
         <header>
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
@@ -564,9 +580,22 @@
             </div>
             <div class="progress" id="progressBar" style="margin-top: 12px;">
                 <div class="progress-bar" id="progressFill"></div>
-                <div class="toast-container" id="toastContainer"></div>
             </div>
+            <div class="toast-container" id="toastContainer"></div>
         </header>
+        
+        <!-- Transfer Bar -->
+        <div class="transfer-bar">
+            <span style="color: var(--text-dim); font-size: 11px; margin-right: 10px;">TRANSFER:</span>
+            <input type="text" class="form-input" id="transferTarget" placeholder="user@ip" style="flex: 1;">
+            <input type="password" class="form-input" id="transferPassword" placeholder="password" style="width: 250px;">
+            <input type="text" class="form-input" id="transferPath" value="~/" style="width: 250px;">
+            <label style="display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--text-dim);">
+                <input type="checkbox" id="openclawInstalled" checked>
+                <span>openclaw installed</span>
+            </label>
+            <button class="btn btn-info" onclick="startTransfer()">> transfer</button>
+        </div>
         
         <div class="grid">
             <!-- Left Column -->
@@ -591,7 +620,7 @@
                         <div class="upload-status" id="uploadStatus"></div>
                     </div>
                 </div>
-
+                
                 <!-- Schedule Card -->
                 <div class="card" style="margin-top: 20px;">
                     <div class="card-header">
@@ -617,7 +646,7 @@
                         <div id="scheduleList" style="margin-top: 12px;"></div>
                     </div>
                 </div>
-
+                
                 <!-- Options Card -->
                 <div class="card" style="margin-top: 20px;">
                     <div class="card-header">
@@ -689,12 +718,11 @@
                 </div>
             </div>
         </div>
-        
+
         <footer>
             openclaw-backup v1.0 | code by <a href="https://www.facebook.com/pumpith" style="color: var(--cyan);">pumpith</a>
         </footer>
     </div>
-
     <!-- Restore Progress Dialog -->
     <div class="modal-overlay" id="restoreModal" style="display: none;">
         <div class="modal">
@@ -784,12 +812,11 @@
         let restoreCancelled = false;
         
         function showToast(msg, type = 'success') {
-            const c = document.getElementById('toastContainer');
-            const t = document.createElement('div');
-            t.className = 'toast ' + type;
-            t.textContent = msg;
-            c.appendChild(t);
-            setTimeout(function() { t.remove(); }, 3000);
+            fetch(API + '/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ level: type === 'error' ? 'error' : 'info', message: msg })
+            }).catch(() => {});
         }
         
         let logInterval = null;
@@ -949,6 +976,39 @@
                 pb.classList.remove('show');
                 pf.style.width = '0%';
             }, 1500);
+        }
+        
+        async function startTransfer() {
+            var target = document.getElementById('transferTarget').value.trim();
+            var destPath = document.getElementById('transferPath').value.trim() || '~/';
+            var password = document.getElementById('transferPassword').value;
+            var openclawInstalled = document.getElementById('openclawInstalled').checked;
+            
+            if (!target) {
+                showToast('please enter user@ip', 'error');
+                return;
+            }
+            if (!password) {
+                showToast('please enter password', 'error');
+                return;
+            }
+            
+            try {
+                var res = await fetch(API + '/transfer', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ target, destPath, password, openclawInstalled })
+                });
+                var data = await res.json();
+                
+                if (data.success) {
+                    showToast('transfer completed: ' + data.message);
+                } else {
+                    showToast(data.error || 'transfer failed', 'error');
+                }
+            } catch (e) {
+                showToast(e.message, 'error');
+            }
         }
         
         var currentPage = 1;
