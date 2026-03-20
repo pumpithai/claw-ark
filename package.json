@@ -1,7 +1,7 @@
 {
   "name": "claw-ark",
   "version": "1.0.0",
-  "description": "OpenClaw Backup & Restore Web UI",
+  "description": "ClawArk: The Unified Backup & Data Mobility Engine for OpenClaw",
   "main": "claw-ark.js",
   "scripts": {
     "start": "node claw-ark.js"

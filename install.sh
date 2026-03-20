@@ -1,5 +1,5 @@
 #!/bin/bash
-# OpenClaw Backup Installer
+# ClawArk Installer
 # Usage: ./install.sh [port]
 
 set -e
@@ -62,10 +62,23 @@ SCRIPT_DIR="\$(cd "\$(dirname "\$0")" && pwd)"
 source "\$SCRIPT_DIR/.env"
 cd "\$SCRIPT_DIR"
 
-pkill -f 'node claw-ark.js' 2>/dev/null || true
-sleep 1
+LOG_DIR="\$SCRIPT_DIR/logs"
+LOG_FILE="\$LOG_DIR/start.log"
+mkdir -p "\$LOG_DIR"
 
-exec node claw-ark.js
+echo "[\$(date)] Starting claw-ark..." >> "\$LOG_FILE"
+
+pkill -f 'node.*claw-ark.js' 2>/dev/null || true
+sleep 2
+
+if lsof -ti:\${PORT:-4000} 2>/dev/null; then
+    echo "[\$(date)] Port \${PORT:-4000} in use, killing..." >> "\$LOG_FILE"
+    lsof -ti:\${PORT:-4000} | xargs kill -9 2>/dev/null || true
+    sleep 1
+fi
+
+echo "[\$(date)] Starting node process..." >> "\$LOG_FILE"
+exec node claw-ark.js >> "\$LOG_FILE" 2>&1
 EOF
 chmod +x "$SCRIPT_DIR/start.sh"
 
@@ -117,7 +130,8 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
     if lsof -i :$PORT &> /dev/null; then
         log_warn "Port $PORT is still in use. Server may already be running."
     else
-        PORT=$PORT node claw-ark.js &
+        source "$SCRIPT_DIR/.env"
+        node claw-ark.js &
         sleep 2
         if lsof -i :$PORT &> /dev/null; then
             log_info "Server started!"

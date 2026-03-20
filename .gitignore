@@ -1,0 +1,19 @@
+# Environment
+.env
+
+# Logs
+logs/
+*.log
+
+# Backups
+backups/
+*.tar.gz
+*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

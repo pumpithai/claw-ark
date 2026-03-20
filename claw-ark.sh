@@ -76,8 +76,8 @@ backup() {
     log_info "Backing up .openclaw..."
     eval "rsync $rsync_opts '$OPENCLAW_DIR/' '$BACKUP_PATH/'"
     
-    mkdir -p "$BACKUP_PATH/openclaw-backup"
-    cp -f "$0" "$BACKUP_PATH/openclaw-backup/"
+    mkdir -p "$BACKUP_PATH/claw-ark"
+    cp -f "$0" "$BACKUP_PATH/claw-ark/"
     
     log_info "Creating archive..."
     cd "$BACKUP_DIR"

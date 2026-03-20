@@ -1,0 +1,15 @@
+[Unit]
+Description=ClawArk Backup Server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.openclaw/claw-ark
+ExecStart=%h/.openclaw/claw-ark/start.sh
+Restart=always
+RestartSec=5
+Environment=PORT=4000
+Environment=BACKUP_DIR=%h/.openclaw/backups
+
+[Install]
+WantedBy=default.target
