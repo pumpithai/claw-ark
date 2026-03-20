@@ -1,10 +1,11 @@
-# OpenClaw Backup
+# ClawArk
 
-Web UI และ CLI สำหรับ backup, restore และ transfer OpenClaw data
+**EN:** Backup, restore and transfer tool for OpenClaw data with Web UI  
+**TH:** เครื่องมือสำหรับ backup, restore และ transfer ข้อมูล OpenClaw ผ่าน Web UI
 
 ![Screenshot](images/screenshot.png)
 
-## Features
+## Features | คุณสมบัติ
 
 - 📦 **Create/Restore backups** - สร้างและกู้คืน backup ผ่าน Web UI
 - ⬆️ **Upload/Download** - อัพโหลดและดาวน์โหลดไฟล์ backup
@@ -14,20 +15,20 @@ Web UI และ CLI สำหรับ backup, restore และ transfer OpenC
 - 📱 **Modern dark theme UI** - หน้าตาสวยงาม
 - 📋 **Event log** - ดู log การทำงานแบบ real-time
 
-## Installation
+## Installation | การติดตั้ง
 
 ```bash
 # Clone to ~/.openclaw/
 cd ~/.openclaw
-git clone https://github.com/pumpithai/openclaw-backup.git
-cd openclaw-backup
+git clone https://github.com/pumpith/claw-ark.git
+cd claw-ark
 
 # Run installer
 chmod +x install.sh
 ./install.sh
 ```
 
-## Usage
+## Usage | การใช้งาน
 
 ### Web UI
 
@@ -36,12 +37,12 @@ chmod +x install.sh
 ./start.sh
 
 # Or with custom port
-PORT=4000 node backup-server.js
+PORT=4000 node claw-ark.js
 ```
 
 เปิด browser: `http://localhost:4000`
 
-### Transfer to Remote Server
+### Transfer to Remote Server | ถ่ายโอนไป Remote Server
 
 1. กรอก `user@ip` - เช่น `cloudm9n@192.168.10.151`
 2. กรอก `destination path` - เช่น `~/`
@@ -62,23 +63,23 @@ PORT=4000 node backup-server.js
 
 ```bash
 # Create backup
-./openclaw-backup.sh
+./claw-ark.sh
 
 # Exclude patterns
-./openclaw-backup.sh --exclude=workspace
-./openclaw-backup.sh --exclude=media --exclude=cache
+./claw-ark.sh --exclude=workspace
+./claw-ark.sh --exclude=media --exclude=cache
 
 # Include only
-./openclaw-backup.sh --include-only=skills
+./claw-ark.sh --include-only=skills
 
 # List backups
-./openclaw-backup.sh --list
+./claw-ark.sh --list
 
 # Restore
-./openclaw-backup.sh --restore /path/to/backup.tar.gz
+./claw-ark.sh --restore /path/to/backup.tar.gz
 ```
 
-## Backup Contents
+## Backup Contents | เนื้อหาของ Backup
 
 Backups ทั้ง `.openclaw` directory:
 
@@ -95,14 +96,14 @@ Backups ทั้ง `.openclaw` directory:
 | `memory/` | Memory data |
 | `skills/` | Custom skills |
 
-## Configuration
+## Configuration | การตั้งค่า
 
 ### Environment Variables
 
 ```bash
-OPENCLAW_DIR=~/.openclaw     # OpenClaw directory
-BACKUP_DIR=~/.openclaw/backups  # Backup location
-PORT=4000                   # Web UI port
+OPENCLAW_DIR=~/.openclaw       # OpenClaw directory
+BACKUP_DIR=~/.openclaw/backups # Backup location
+PORT=4000                      # Web UI port
 ```
 
 ### Exclude Patterns
@@ -128,14 +129,14 @@ PORT=4000                   # Web UI port
 ```bash
 # Create service
 mkdir -p ~/.config/systemd/user
-cat > ~/.config/systemd/user/openclaw-backup.service << EOF
+cat > ~/.config/systemd/user/claw-ark.service << EOF
 [Unit]
-Description=OpenClaw Backup Server
+Description=ClawArk Backup Server
 
 [Service]
 Type=simple
-WorkingDirectory=%h/.openclaw/openclaw-backup
-ExecStart=/usr/bin/node %h/.openclaw/openclaw-backup/backup-server.js
+WorkingDirectory=%h/.openclaw/claw-ark
+ExecStart=/usr/bin/node %h/.openclaw/claw-ark/claw-ark.js
 Restart=on-failure
 
 [Install]
@@ -143,17 +144,17 @@ WantedBy=default.target
 EOF
 
 # Enable
-systemctl --user enable --now openclaw-backup
+systemctl --user enable --now claw-ark
 ```
 
-## Commands
+## Commands | คำสั่ง
 
 ```bash
 # Start server
 ./start.sh
 
 # Stop server
-pkill -f 'node backup-server.js'
+pkill -f 'node claw-ark.js'
 
 # View logs
 tail -f logs/app.log
@@ -183,4 +184,4 @@ MIT
 
 ## Author
 
-[pumpith](https://www.facebook.com/pumpith)
+[pumpit](https://www.facebook.com/pumpit)

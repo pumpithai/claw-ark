@@ -30,10 +30,10 @@ if ! command -v node &> /dev/null; then
     sudo apt-get install -y nodejs
 fi
 
-# Kill existing backup server if running
-if pgrep -f 'node backup-server.js' &> /dev/null; then
-    log_info "Killing existing backup server..."
-    pkill -f 'node backup-server.js'
+# Kill existing claw-ark server if running
+if pgrep -f 'node claw-ark.js' &> /dev/null; then
+    log_info "Killing existing claw-ark server..."
+    pkill -f 'node claw-ark.js'
     sleep 1
 fi
 
@@ -62,10 +62,10 @@ SCRIPT_DIR="\$(cd "\$(dirname "\$0")" && pwd)"
 source "\$SCRIPT_DIR/.env"
 cd "\$SCRIPT_DIR"
 
-pkill -f 'node backup-server.js' 2>/dev/null || true
+pkill -f 'node claw-ark.js' 2>/dev/null || true
 sleep 1
 
-exec node backup-server.js
+exec node claw-ark.js
 EOF
 chmod +x "$SCRIPT_DIR/start.sh"
 
@@ -73,9 +73,9 @@ chmod +x "$SCRIPT_DIR/start.sh"
 if command -v systemctl &> /dev/null; then
     log_info "Creating systemd service..."
     mkdir -p "$HOME/.config/systemd/user"
-    cat > "$HOME/.config/systemd/user/openclaw-backup.service" << EOF
+    cat > "$HOME/.config/systemd/user/claw-ark.service" << EOF
 [Unit]
-Description=OpenClaw Backup Server
+Description=ClawArk Backup Server
 After=network.target
 
 [Service]
@@ -88,7 +88,7 @@ Environment=PORT=$PORT
 [Install]
 WantedBy=default.target
 EOF
-    log_info "Run: systemctl --user enable --now openclaw-backup"
+    log_info "Run: systemctl --user enable --now claw-ark"
 fi
 
 # Try to get local IP
@@ -103,9 +103,9 @@ echo "📁 Backups: $BACKUP_DIR"
 echo ""
 echo "📝 Commands:"
 echo "   Start: ./start.sh"
-echo "   Stop:  pkill -f 'node backup-server.js'"
+echo "   Stop:  pkill -f 'node claw-ark.js'"
 if command -v systemctl &> /dev/null; then
-    echo "   Auto:  systemctl --user enable --now openclaw-backup"
+    echo "   Auto:  systemctl --user enable --now claw-ark"
 fi
 
 # Start the server
@@ -117,7 +117,7 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
     if lsof -i :$PORT &> /dev/null; then
         log_warn "Port $PORT is still in use. Server may already be running."
     else
-        PORT=$PORT node backup-server.js &
+        PORT=$PORT node claw-ark.js &
         sleep 2
         if lsof -i :$PORT &> /dev/null; then
             log_info "Server started!"

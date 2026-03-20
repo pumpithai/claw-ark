@@ -1,0 +1,612 @@
+[2026-03-20T01:45:42.590Z] [info] Starting backup: manual
+[2026-03-20T01:45:42.734Z] [info] Backup completed: master-openclaw_manual_2026-03-20T01-45-42.tar.gz
+[2026-03-20T01:46:01.181Z] [info] Starting backup: auto
+[2026-03-20T01:46:01.315Z] [info] Backup completed: master-openclaw_auto_2026-03-20T01-46-01.tar.gz
+[2026-03-20T01:47:01.342Z] [info] Starting backup: auto
+[2026-03-20T01:47:01.471Z] [info] Backup completed: master-openclaw_auto_2026-03-20T01-47-01.tar.gz
+[2026-03-20T01:48:01.495Z] [info] Starting backup: auto
+[2026-03-20T01:48:01.620Z] [info] Backup completed: master-openclaw_auto_2026-03-20T01-48-01.tar.gz
+[2026-03-20T06:35:01.292Z] [info] Starting backup: auto
+[2026-03-20T06:35:01.446Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-35-01.tar.gz
+[2026-03-20T06:36:01.480Z] [info] Starting backup: auto
+[2026-03-20T06:36:01.615Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-36-01.tar.gz
+[2026-03-20T06:37:01.637Z] [info] Starting backup: auto
+[2026-03-20T06:37:01.765Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-37-01.tar.gz
+[2026-03-20T06:38:01.807Z] [info] Starting backup: auto
+[2026-03-20T06:38:01.952Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-38-01.tar.gz
+[2026-03-20T06:39:01.984Z] [info] Starting backup: auto
+[2026-03-20T06:39:02.126Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-39-01.tar.gz
+[2026-03-20T06:40:01.161Z] [info] Starting backup: auto
+[2026-03-20T06:40:01.289Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-40-01.tar.gz
+[2026-03-20T06:41:01.319Z] [info] Starting backup: auto
+[2026-03-20T06:41:01.438Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-41-01.tar.gz
+[2026-03-20T06:42:01.461Z] [info] Starting backup: auto
+[2026-03-20T06:42:01.584Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-42-01.tar.gz
+[2026-03-20T06:43:01.607Z] [info] Starting backup: auto
+[2026-03-20T06:43:01.762Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-43-01.tar.gz
+[2026-03-20T06:44:01.785Z] [info] Starting backup: auto
+[2026-03-20T06:44:01.909Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-44-01.tar.gz
+[2026-03-20T06:45:01.929Z] [info] Starting backup: auto
+[2026-03-20T06:45:02.052Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-45-01.tar.gz
+[2026-03-20T06:46:01.072Z] [info] Starting backup: auto
+[2026-03-20T06:46:01.187Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-46-01.tar.gz
+[2026-03-20T06:47:01.206Z] [info] Starting backup: auto
+[2026-03-20T06:47:01.322Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-47-01.tar.gz
+[2026-03-20T06:48:01.345Z] [info] Starting backup: auto
+[2026-03-20T06:48:01.469Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-48-01.tar.gz
+[2026-03-20T06:49:01.498Z] [info] Starting backup: auto
+[2026-03-20T06:49:01.623Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-49-01.tar.gz
+[2026-03-20T06:50:01.654Z] [info] Starting backup: auto
+[2026-03-20T06:50:01.772Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-50-01.tar.gz
+[2026-03-20T06:51:01.793Z] [info] Starting backup: auto
+[2026-03-20T06:51:01.916Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-51-01.tar.gz
+[2026-03-20T06:52:01.936Z] [info] Starting backup: auto
+[2026-03-20T06:52:02.056Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-52-01.tar.gz
+[2026-03-20T06:53:01.079Z] [info] Starting backup: auto
+[2026-03-20T06:53:01.207Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-53-01.tar.gz
+[2026-03-20T06:54:01.232Z] [info] Starting backup: auto
+[2026-03-20T06:54:01.356Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-54-01.tar.gz
+[2026-03-20T06:55:01.379Z] [info] Starting backup: auto
+[2026-03-20T06:55:01.501Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-55-01.tar.gz
+[2026-03-20T06:56:01.521Z] [info] Starting backup: auto
+[2026-03-20T06:56:01.646Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-56-01.tar.gz
+[2026-03-20T06:57:01.668Z] [info] Starting backup: auto
+[2026-03-20T06:57:01.801Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-57-01.tar.gz
+[2026-03-20T06:58:01.824Z] [info] Starting backup: auto
+[2026-03-20T06:58:01.970Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-58-01.tar.gz
+[2026-03-20T06:59:01.992Z] [info] Starting backup: auto
+[2026-03-20T06:59:02.113Z] [info] Backup completed: master-openclaw_auto_2026-03-20T06-59-01.tar.gz
+[2026-03-20T07:00:01.144Z] [info] Starting backup: auto
+[2026-03-20T07:00:01.265Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-00-01.tar.gz
+[2026-03-20T07:01:01.286Z] [info] Starting backup: auto
+[2026-03-20T07:01:01.404Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-01-01.tar.gz
+[2026-03-20T07:02:01.429Z] [info] Starting backup: auto
+[2026-03-20T07:02:01.557Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-02-01.tar.gz
+[2026-03-20T07:03:01.583Z] [info] Starting backup: auto
+[2026-03-20T07:03:01.717Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-03-01.tar.gz
+[2026-03-20T07:04:01.744Z] [info] Starting backup: auto
+[2026-03-20T07:04:01.867Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-04-01.tar.gz
+[2026-03-20T07:05:01.886Z] [info] Starting backup: auto
+[2026-03-20T07:05:02.009Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-05-01.tar.gz
+[2026-03-20T07:06:01.030Z] [info] Starting backup: auto
+[2026-03-20T07:06:01.148Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-06-01.tar.gz
+[2026-03-20T07:07:01.171Z] [info] Starting backup: auto
+[2026-03-20T07:07:01.306Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-07-01.tar.gz
+[2026-03-20T07:08:01.331Z] [info] Starting backup: auto
+[2026-03-20T07:08:01.467Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-08-01.tar.gz
+[2026-03-20T07:09:01.492Z] [info] Starting backup: auto
+[2026-03-20T07:09:01.621Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-09-01.tar.gz
+[2026-03-20T07:10:01.657Z] [info] Starting backup: auto
+[2026-03-20T07:10:01.783Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-10-01.tar.gz
+[2026-03-20T07:11:01.811Z] [info] Starting backup: auto
+[2026-03-20T07:11:01.938Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-11-01.tar.gz
+[2026-03-20T07:12:01.972Z] [info] Starting backup: auto
+[2026-03-20T07:12:02.106Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-12-01.tar.gz
+[2026-03-20T07:13:01.130Z] [info] Starting backup: auto
+[2026-03-20T07:13:01.248Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-13-01.tar.gz
+[2026-03-20T07:14:01.269Z] [info] Starting backup: auto
+[2026-03-20T07:14:01.400Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-14-01.tar.gz
+[2026-03-20T07:15:01.421Z] [info] Starting backup: auto
+[2026-03-20T07:15:01.544Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-15-01.tar.gz
+[2026-03-20T07:16:01.565Z] [info] Starting backup: auto
+[2026-03-20T07:16:01.691Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-16-01.tar.gz
+[2026-03-20T07:17:01.719Z] [info] Starting backup: auto
+[2026-03-20T07:17:01.849Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-17-01.tar.gz
+[2026-03-20T07:18:01.874Z] [info] Starting backup: auto
+[2026-03-20T07:18:01.993Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-18-01.tar.gz
+[2026-03-20T07:19:02.017Z] [info] Starting backup: auto
+[2026-03-20T07:19:02.138Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-19-02.tar.gz
+[2026-03-20T07:20:01.171Z] [info] Starting backup: auto
+[2026-03-20T07:20:01.287Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-20-01.tar.gz
+[2026-03-20T07:21:01.308Z] [info] Starting backup: auto
+[2026-03-20T07:21:01.430Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-21-01.tar.gz
+[2026-03-20T07:22:01.453Z] [info] Starting backup: auto
+[2026-03-20T07:22:01.585Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-22-01.tar.gz
+[2026-03-20T07:23:01.607Z] [info] Starting backup: auto
+[2026-03-20T07:23:01.733Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-23-01.tar.gz
+[2026-03-20T07:24:01.759Z] [info] Starting backup: auto
+[2026-03-20T07:24:01.895Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-24-01.tar.gz
+[2026-03-20T07:25:01.915Z] [info] Starting backup: auto
+[2026-03-20T07:25:02.042Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-25-01.tar.gz
+[2026-03-20T07:26:01.064Z] [info] Starting backup: auto
+[2026-03-20T07:26:01.183Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-26-01.tar.gz
+[2026-03-20T07:27:01.202Z] [info] Starting backup: auto
+[2026-03-20T07:27:01.328Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-27-01.tar.gz
+[2026-03-20T07:28:01.353Z] [info] Starting backup: auto
+[2026-03-20T07:28:01.483Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-28-01.tar.gz
+[2026-03-20T07:29:01.514Z] [info] Starting backup: auto
+[2026-03-20T07:29:01.635Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-29-01.tar.gz
+[2026-03-20T07:30:01.666Z] [info] Starting backup: auto
+[2026-03-20T07:30:01.783Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-30-01.tar.gz
+[2026-03-20T07:31:01.805Z] [info] Starting backup: auto
+[2026-03-20T07:31:01.919Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-31-01.tar.gz
+[2026-03-20T07:32:01.939Z] [info] Starting backup: auto
+[2026-03-20T07:32:02.059Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-32-01.tar.gz
+[2026-03-20T07:33:01.083Z] [info] Starting backup: auto
+[2026-03-20T07:33:01.206Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-33-01.tar.gz
+[2026-03-20T07:34:01.231Z] [info] Starting backup: auto
+[2026-03-20T07:34:01.380Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-34-01.tar.gz
+[2026-03-20T07:35:01.401Z] [info] Starting backup: auto
+[2026-03-20T07:35:01.524Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-35-01.tar.gz
+[2026-03-20T07:36:01.559Z] [info] Starting backup: auto
+[2026-03-20T07:36:01.710Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-36-01.tar.gz
+[2026-03-20T07:37:01.733Z] [info] Starting backup: auto
+[2026-03-20T07:37:01.858Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-37-01.tar.gz
+[2026-03-20T07:38:01.883Z] [info] Starting backup: auto
+[2026-03-20T07:38:02.011Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-38-01.tar.gz
+[2026-03-20T07:39:01.039Z] [info] Starting backup: auto
+[2026-03-20T07:39:01.187Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-39-01.tar.gz
+[2026-03-20T07:40:01.226Z] [info] Starting backup: auto
+[2026-03-20T07:40:01.373Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-40-01.tar.gz
+[2026-03-20T07:41:01.401Z] [info] Starting backup: auto
+[2026-03-20T07:41:01.538Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-41-01.tar.gz
+[2026-03-20T07:42:01.569Z] [info] Starting backup: auto
+[2026-03-20T07:42:01.706Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-42-01.tar.gz
+[2026-03-20T07:43:01.730Z] [info] Starting backup: auto
+[2026-03-20T07:43:01.856Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-43-01.tar.gz
+[2026-03-20T07:44:01.875Z] [info] Starting backup: auto
+[2026-03-20T07:44:01.997Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-44-01.tar.gz
+[2026-03-20T07:45:01.017Z] [info] Starting backup: auto
+[2026-03-20T07:45:01.141Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-45-01.tar.gz
+[2026-03-20T07:46:01.162Z] [info] Starting backup: auto
+[2026-03-20T07:46:01.319Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-46-01.tar.gz
+[2026-03-20T07:47:01.341Z] [info] Starting backup: auto
+[2026-03-20T07:47:01.461Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-47-01.tar.gz
+[2026-03-20T07:48:01.481Z] [info] Starting backup: auto
+[2026-03-20T07:48:01.617Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-48-01.tar.gz
+[2026-03-20T07:49:01.650Z] [info] Starting backup: auto
+[2026-03-20T07:49:01.785Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-49-01.tar.gz
+[2026-03-20T07:50:01.827Z] [info] Starting backup: auto
+[2026-03-20T07:50:01.949Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-50-01.tar.gz
+[2026-03-20T07:51:01.975Z] [info] Starting backup: auto
+[2026-03-20T07:51:02.096Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-51-01.tar.gz
+[2026-03-20T07:52:01.120Z] [info] Starting backup: auto
+[2026-03-20T07:52:01.244Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-52-01.tar.gz
+[2026-03-20T07:53:01.267Z] [info] Starting backup: auto
+[2026-03-20T07:53:01.389Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-53-01.tar.gz
+[2026-03-20T07:54:01.412Z] [info] Starting backup: auto
+[2026-03-20T07:54:01.568Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-54-01.tar.gz
+[2026-03-20T07:55:01.588Z] [info] Starting backup: auto
+[2026-03-20T07:55:01.708Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-55-01.tar.gz
+[2026-03-20T07:56:01.728Z] [info] Starting backup: auto
+[2026-03-20T07:56:01.842Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-56-01.tar.gz
+[2026-03-20T07:57:01.862Z] [info] Starting backup: auto
+[2026-03-20T07:57:01.980Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-57-01.tar.gz
+[2026-03-20T07:58:02.002Z] [info] Starting backup: auto
+[2026-03-20T07:58:02.123Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-58-02.tar.gz
+[2026-03-20T07:59:01.145Z] [info] Starting backup: auto
+[2026-03-20T07:59:01.285Z] [info] Backup completed: master-openclaw_auto_2026-03-20T07-59-01.tar.gz
+[2026-03-20T08:00:01.324Z] [info] Starting backup: auto
+[2026-03-20T08:00:01.459Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-00-01.tar.gz
+[2026-03-20T08:01:01.501Z] [info] Starting backup: auto
+[2026-03-20T08:01:01.639Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-01-01.tar.gz
+[2026-03-20T08:02:01.664Z] [info] Starting backup: auto
+[2026-03-20T08:02:01.785Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-02-01.tar.gz
+[2026-03-20T08:03:01.805Z] [info] Starting backup: auto
+[2026-03-20T08:03:01.926Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-03-01.tar.gz
+[2026-03-20T08:04:01.949Z] [info] Starting backup: auto
+[2026-03-20T08:04:02.074Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-04-01.tar.gz
+[2026-03-20T08:05:01.098Z] [info] Starting backup: auto
+[2026-03-20T08:05:01.233Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-05-01.tar.gz
+[2026-03-20T08:06:01.254Z] [info] Starting backup: auto
+[2026-03-20T08:06:01.383Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-06-01.tar.gz
+[2026-03-20T08:07:01.405Z] [info] Starting backup: auto
+[2026-03-20T08:07:01.525Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-07-01.tar.gz
+[2026-03-20T08:08:01.546Z] [info] Starting backup: auto
+[2026-03-20T08:08:01.669Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-08-01.tar.gz
+[2026-03-20T08:09:01.690Z] [info] Starting backup: auto
+[2026-03-20T08:09:01.793Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-09-01.tar.gz
+[2026-03-20T08:10:01.825Z] [info] Starting backup: auto
+[2026-03-20T08:10:01.955Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-10-01.tar.gz
+[2026-03-20T08:11:01.975Z] [info] Starting backup: auto
+[2026-03-20T08:11:02.100Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-11-01.tar.gz
+[2026-03-20T08:12:01.121Z] [info] Starting backup: auto
+[2026-03-20T08:12:01.247Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-12-01.tar.gz
+[2026-03-20T08:13:01.274Z] [info] Starting backup: auto
+[2026-03-20T08:13:01.415Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-13-01.tar.gz
+[2026-03-20T08:14:01.439Z] [info] Starting backup: auto
+[2026-03-20T08:14:01.568Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-14-01.tar.gz
+[2026-03-20T08:15:01.594Z] [info] Starting backup: auto
+[2026-03-20T08:15:01.726Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-15-01.tar.gz
+[2026-03-20T08:16:01.752Z] [info] Starting backup: auto
+[2026-03-20T08:16:01.889Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-16-01.tar.gz
+[2026-03-20T08:17:01.915Z] [info] Starting backup: auto
+[2026-03-20T08:17:02.072Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-17-01.tar.gz
+[2026-03-20T08:18:01.094Z] [info] Starting backup: auto
+[2026-03-20T08:18:01.235Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-18-01.tar.gz
+[2026-03-20T08:19:01.259Z] [info] Starting backup: auto
+[2026-03-20T08:19:01.383Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-19-01.tar.gz
+[2026-03-20T08:20:01.421Z] [info] Starting backup: auto
+[2026-03-20T08:20:01.543Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-20-01.tar.gz
+[2026-03-20T08:21:01.569Z] [info] Starting backup: auto
+[2026-03-20T08:21:01.710Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-21-01.tar.gz
+[2026-03-20T08:22:01.732Z] [info] Starting backup: auto
+[2026-03-20T08:22:01.852Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-22-01.tar.gz
+[2026-03-20T08:23:01.874Z] [info] Starting backup: auto
+[2026-03-20T08:23:02.003Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-23-01.tar.gz
+[2026-03-20T08:24:01.023Z] [info] Starting backup: auto
+[2026-03-20T08:24:01.141Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-24-01.tar.gz
+[2026-03-20T08:25:01.161Z] [info] Starting backup: auto
+[2026-03-20T08:25:01.281Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-25-01.tar.gz
+[2026-03-20T08:26:01.303Z] [info] Starting backup: auto
+[2026-03-20T08:26:01.424Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-26-01.tar.gz
+[2026-03-20T08:27:01.450Z] [info] Starting backup: auto
+[2026-03-20T08:27:01.573Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-27-01.tar.gz
+[2026-03-20T08:28:01.601Z] [info] Starting backup: auto
+[2026-03-20T08:28:01.728Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-28-01.tar.gz
+[2026-03-20T08:29:01.749Z] [info] Starting backup: auto
+[2026-03-20T08:29:01.871Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-29-01.tar.gz
+[2026-03-20T08:31:01.928Z] [info] Starting backup: auto
+[2026-03-20T08:31:02.068Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-31-01.tar.gz
+[2026-03-20T08:32:01.090Z] [info] Starting backup: auto
+[2026-03-20T08:32:01.241Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-32-01.tar.gz
+[2026-03-20T08:33:01.261Z] [info] Starting backup: auto
+[2026-03-20T08:33:01.390Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-33-01.tar.gz
+[2026-03-20T08:34:59.397Z] [info] Starting backup: manual
+[2026-03-20T08:34:59.527Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-34-59.tar.gz
+[2026-03-20T08:35:01.433Z] [info] Starting backup: auto
+[2026-03-20T08:35:01.560Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-35-01.tar.gz
+[2026-03-20T08:36:01.579Z] [info] Starting backup: auto
+[2026-03-20T08:36:01.698Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-36-01.tar.gz
+[2026-03-20T08:36:52.342Z] [info] Starting backup: manual
+[2026-03-20T08:36:52.464Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-36-52.tar.gz
+[2026-03-20T08:37:01.719Z] [info] Starting backup: auto
+[2026-03-20T08:37:01.840Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-37-01.tar.gz
+[2026-03-20T08:38:01.864Z] [info] Starting backup: auto
+[2026-03-20T08:38:01.986Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-38-01.tar.gz
+[2026-03-20T08:38:23.641Z] [info] Starting backup: manual
+[2026-03-20T08:38:23.755Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-38-23.tar.gz
+[2026-03-20T08:38:32.486Z] [info] Starting backup: manual
+[2026-03-20T08:38:32.622Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-38-32.tar.gz
+[2026-03-20T08:39:02.008Z] [info] Starting backup: auto
+[2026-03-20T08:39:02.125Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-39-02.tar.gz
+[2026-03-20T08:39:17.022Z] [info] Starting backup: manual
+[2026-03-20T08:39:17.144Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-39-17.tar.gz
+[2026-03-20T08:39:19.774Z] [info] Starting backup: manual
+[2026-03-20T08:39:19.906Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-39-19.tar.gz
+[2026-03-20T08:39:21.994Z] [info] Starting backup: manual
+[2026-03-20T08:39:22.114Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-39-21.tar.gz
+[2026-03-20T08:39:23.788Z] [info] Starting backup: manual
+[2026-03-20T08:39:23.908Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-39-23.tar.gz
+[2026-03-20T08:39:24.574Z] [info] Starting backup: manual
+[2026-03-20T08:39:24.694Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-39-24.tar.gz
+[2026-03-20T08:39:25.233Z] [info] Starting backup: manual
+[2026-03-20T08:39:25.361Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-39-25.tar.gz
+[2026-03-20T08:39:27.379Z] [info] Starting backup: manual
+[2026-03-20T08:39:27.509Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-39-27.tar.gz
+[2026-03-20T08:39:27.987Z] [info] Starting backup: manual
+[2026-03-20T08:39:28.113Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-39-27.tar.gz
+[2026-03-20T08:39:58.401Z] [info] Starting backup: manual
+[2026-03-20T08:39:58.533Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-39-58.tar.gz
+[2026-03-20T08:40:01.159Z] [info] Starting backup: auto
+[2026-03-20T08:40:01.276Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-40-01.tar.gz
+[2026-03-20T08:41:01.304Z] [info] Starting backup: auto
+[2026-03-20T08:41:01.432Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-41-01.tar.gz
+[2026-03-20T08:41:32.184Z] [info] Starting backup: manual
+[2026-03-20T08:41:32.304Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-41-32.tar.gz
+[2026-03-20T08:41:37.689Z] [info] Starting backup: manual
+[2026-03-20T08:41:37.807Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-41-37.tar.gz
+[2026-03-20T08:41:46.961Z] [info] Starting backup: manual
+[2026-03-20T08:41:47.091Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-41-46.tar.gz
+[2026-03-20T08:41:56.569Z] [info] Starting backup: manual
+[2026-03-20T08:41:56.689Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-41-56.tar.gz
+[2026-03-20T08:42:01.457Z] [info] Starting backup: auto
+[2026-03-20T08:42:01.579Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-42-01.tar.gz
+[2026-03-20T08:43:01.606Z] [info] Starting backup: auto
+[2026-03-20T08:43:01.729Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-43-01.tar.gz
+[2026-03-20T08:44:01.754Z] [info] Starting backup: auto
+[2026-03-20T08:44:01.890Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-44-01.tar.gz
+[2026-03-20T08:45:01.914Z] [info] Starting backup: auto
+[2026-03-20T08:45:02.039Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-45-01.tar.gz
+[2026-03-20T08:45:28.510Z] [info] Starting backup: manual
+[2026-03-20T08:45:28.627Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-45-28.tar.gz
+[2026-03-20T08:46:01.059Z] [info] Starting backup: auto
+[2026-03-20T08:46:01.174Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-46-01.tar.gz
+[2026-03-20T08:46:02.749Z] [info] Starting backup: manual
+[2026-03-20T08:46:02.865Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-46-02.tar.gz
+[2026-03-20T08:46:18.245Z] [info] Starting backup: manual
+[2026-03-20T08:46:18.373Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-46-18.tar.gz
+[2026-03-20T08:46:35.969Z] [info] Starting backup: manual
+[2026-03-20T08:46:36.093Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-46-35.tar.gz
+[2026-03-20T08:47:01.198Z] [info] Starting backup: auto
+[2026-03-20T08:47:01.327Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-47-01.tar.gz
+[2026-03-20T08:48:01.355Z] [info] Starting backup: auto
+[2026-03-20T08:48:01.499Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-48-01.tar.gz
+[2026-03-20T08:49:01.521Z] [info] Starting backup: auto
+[2026-03-20T08:49:01.640Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-49-01.tar.gz
+[2026-03-20T08:49:06.132Z] [info] Starting backup: manual
+[2026-03-20T08:49:06.250Z] [info] Backup completed: master-openclaw_manual_2026-03-20T08-49-06.tar.gz
+[2026-03-20T08:50:01.678Z] [info] Starting backup: auto
+[2026-03-20T08:50:01.822Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-50-01.tar.gz
+[2026-03-20T08:51:01.855Z] [info] Starting backup: auto
+[2026-03-20T08:51:01.975Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-51-01.tar.gz
+[2026-03-20T08:52:01.997Z] [info] Starting backup: auto
+[2026-03-20T08:52:02.124Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-52-01.tar.gz
+[2026-03-20T08:53:01.149Z] [info] Starting backup: auto
+[2026-03-20T08:53:01.288Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-53-01.tar.gz
+[2026-03-20T08:54:01.308Z] [info] Starting backup: auto
+[2026-03-20T08:54:01.436Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-54-01.tar.gz
+[2026-03-20T08:55:01.462Z] [info] Starting backup: auto
+[2026-03-20T08:55:01.608Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-55-01.tar.gz
+[2026-03-20T08:56:01.629Z] [info] Starting backup: auto
+[2026-03-20T08:56:01.756Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-56-01.tar.gz
+[2026-03-20T08:57:01.778Z] [info] Starting backup: auto
+[2026-03-20T08:57:01.902Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-57-01.tar.gz
+[2026-03-20T08:58:01.922Z] [info] Starting backup: auto
+[2026-03-20T08:58:02.038Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-58-01.tar.gz
+[2026-03-20T08:59:01.062Z] [info] Starting backup: auto
+[2026-03-20T08:59:01.187Z] [info] Backup completed: master-openclaw_auto_2026-03-20T08-59-01.tar.gz
+[2026-03-20T09:00:01.226Z] [info] Starting backup: auto
+[2026-03-20T09:00:01.361Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-00-01.tar.gz
+[2026-03-20T09:01:01.388Z] [info] Starting backup: auto
+[2026-03-20T09:01:01.511Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-01-01.tar.gz
+[2026-03-20T09:02:01.533Z] [info] Starting backup: auto
+[2026-03-20T09:02:01.661Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-02-01.tar.gz
+[2026-03-20T09:03:01.684Z] [info] Starting backup: auto
+[2026-03-20T09:03:01.815Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-03-01.tar.gz
+[2026-03-20T09:04:01.842Z] [info] Starting backup: auto
+[2026-03-20T09:04:01.976Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-04-01.tar.gz
+[2026-03-20T09:05:02.003Z] [info] Starting backup: auto
+[2026-03-20T09:05:02.132Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-05-02.tar.gz
+[2026-03-20T09:06:01.158Z] [info] Starting backup: auto
+[2026-03-20T09:06:01.286Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-06-01.tar.gz
+[2026-03-20T09:11:01.873Z] [info] Starting backup: auto
+[2026-03-20T09:11:02.020Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-11-01.tar.gz
+[2026-03-20T09:12:01.047Z] [info] Starting backup: auto
+[2026-03-20T09:12:01.195Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-12-01.tar.gz
+[2026-03-20T09:13:01.217Z] [info] Starting backup: auto
+[2026-03-20T09:13:01.344Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-13-01.tar.gz
+[2026-03-20T09:14:01.366Z] [info] Starting backup: auto
+[2026-03-20T09:14:01.490Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-14-01.tar.gz
+[2026-03-20T09:15:01.512Z] [info] Starting backup: auto
+[2026-03-20T09:15:01.639Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-15-01.tar.gz
+[2026-03-20T09:16:01.662Z] [info] Starting backup: auto
+[2026-03-20T09:16:01.801Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-16-01.tar.gz
+[2026-03-20T09:17:01.825Z] [info] Starting backup: auto
+[2026-03-20T09:17:01.959Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-17-01.tar.gz
+[2026-03-20T09:18:01.990Z] [info] Starting backup: auto
+[2026-03-20T09:18:02.126Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-18-01.tar.gz
+[2026-03-20T09:19:01.149Z] [info] Starting backup: auto
+[2026-03-20T09:19:01.278Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-19-01.tar.gz
+[2026-03-20T09:23:01.374Z] [info] Starting backup: auto
+[2026-03-20T09:23:01.518Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-23-01.tar.gz
+[2026-03-20T09:23:12.540Z] [info] Starting backup: manual
+[2026-03-20T09:23:12.660Z] [info] Backup completed: master-openclaw_manual_2026-03-20T09-23-12.tar.gz
+[2026-03-20T09:24:01.543Z] [info] Starting backup: auto
+[2026-03-20T09:24:01.662Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-24-01.tar.gz
+[2026-03-20T09:25:01.683Z] [info] Starting backup: auto
+[2026-03-20T09:25:01.804Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-25-01.tar.gz
+[2026-03-20T09:26:01.825Z] [info] Starting backup: auto
+[2026-03-20T09:26:01.946Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-26-01.tar.gz
+[2026-03-20T09:27:01.972Z] [info] Starting backup: auto
+[2026-03-20T09:27:02.105Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-27-01.tar.gz
+[2026-03-20T09:28:01.134Z] [info] Starting backup: auto
+[2026-03-20T09:28:01.269Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-28-01.tar.gz
+[2026-03-20T09:29:01.296Z] [info] Starting backup: auto
+[2026-03-20T09:29:01.411Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-29-01.tar.gz
+[2026-03-20T09:30:01.447Z] [info] Starting backup: auto
+[2026-03-20T09:30:01.570Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-30-01.tar.gz
+[2026-03-20T09:31:01.605Z] [info] Starting backup: auto
+[2026-03-20T09:31:01.730Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-31-01.tar.gz
+[2026-03-20T09:32:01.753Z] [info] Starting backup: auto
+[2026-03-20T09:32:01.872Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-32-01.tar.gz
+[2026-03-20T09:33:01.892Z] [info] Starting backup: auto
+[2026-03-20T09:33:02.014Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-33-01.tar.gz
+[2026-03-20T09:34:01.038Z] [info] Starting backup: auto
+[2026-03-20T09:34:01.157Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-34-01.tar.gz
+[2026-03-20T09:35:01.181Z] [info] Starting backup: auto
+[2026-03-20T09:35:01.304Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-35-01.tar.gz
+[2026-03-20T09:36:01.326Z] [info] Starting backup: auto
+[2026-03-20T09:36:01.447Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-36-01.tar.gz
+[2026-03-20T09:37:01.469Z] [info] Starting backup: auto
+[2026-03-20T09:37:01.584Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-37-01.tar.gz
+[2026-03-20T09:38:01.609Z] [info] Starting backup: auto
+[2026-03-20T09:38:01.734Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-38-01.tar.gz
+[2026-03-20T09:39:01.757Z] [info] Starting backup: auto
+[2026-03-20T09:39:01.871Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-39-01.tar.gz
+[2026-03-20T09:40:01.902Z] [info] Starting backup: auto
+[2026-03-20T09:40:02.028Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-40-01.tar.gz
+[2026-03-20T09:41:01.056Z] [info] Starting backup: auto
+[2026-03-20T09:41:01.177Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-41-01.tar.gz
+[2026-03-20T09:42:01.202Z] [info] Starting backup: auto
+[2026-03-20T09:42:01.322Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-42-01.tar.gz
+[2026-03-20T09:43:01.352Z] [info] Starting backup: auto
+[2026-03-20T09:43:01.480Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-43-01.tar.gz
+[2026-03-20T09:44:01.514Z] [info] Starting backup: auto
+[2026-03-20T09:44:01.660Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-44-01.tar.gz
+[2026-03-20T09:45:01.684Z] [info] Starting backup: auto
+[2026-03-20T09:45:01.809Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-45-01.tar.gz
+[2026-03-20T09:46:01.838Z] [info] Starting backup: auto
+[2026-03-20T09:46:01.978Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-46-01.tar.gz
+[2026-03-20T09:47:02.004Z] [info] Starting backup: auto
+[2026-03-20T09:47:02.131Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-47-02.tar.gz
+[2026-03-20T09:51:37.373Z] [info] Starting backup: manual
+[2026-03-20T09:51:37.496Z] [info] Backup completed: master-openclaw_manual_2026-03-20T09-51-37.tar.gz
+[2026-03-20T09:55:01.163Z] [info] Starting backup: auto
+[2026-03-20T09:55:01.281Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-55-01.tar.gz
+[2026-03-20T09:56:01.301Z] [info] Starting backup: auto
+[2026-03-20T09:56:01.415Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-56-01.tar.gz
+[2026-03-20T09:56:54.232Z] [info] Starting backup: manual
+[2026-03-20T09:56:54.355Z] [info] Backup completed: master-openclaw_manual_2026-03-20T09-56-54.tar.gz
+[2026-03-20T09:57:01.435Z] [info] Starting backup: auto
+[2026-03-20T09:57:01.547Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-57-01.tar.gz
+[2026-03-20T09:58:01.568Z] [info] Starting backup: auto
+[2026-03-20T09:58:01.681Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-58-01.tar.gz
+[2026-03-20T09:59:01.714Z] [info] Starting backup: auto
+[2026-03-20T09:59:01.838Z] [info] Backup completed: master-openclaw_auto_2026-03-20T09-59-01.tar.gz
+[2026-03-20T10:00:01.869Z] [info] Starting backup: auto
+[2026-03-20T10:00:02.008Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-00-01.tar.gz
+[2026-03-20T10:01:01.032Z] [info] Starting backup: auto
+[2026-03-20T10:01:01.155Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-01-01.tar.gz
+[2026-03-20T10:01:04.708Z] [info] Starting backup: manual
+[2026-03-20T10:01:04.823Z] [info] Backup completed: master-openclaw_manual_2026-03-20T10-01-04.tar.gz
+[2026-03-20T10:01:57.096Z] [info] Starting backup: manual
+[2026-03-20T10:01:57.235Z] [info] Backup completed: master-openclaw_manual_2026-03-20T10-01-57.tar.gz
+[2026-03-20T10:02:01.174Z] [info] Starting backup: auto
+[2026-03-20T10:02:01.301Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-02-01.tar.gz
+[2026-03-20T10:03:01.324Z] [info] Starting backup: auto
+[2026-03-20T10:03:01.444Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-03-01.tar.gz
+[2026-03-20T10:03:07.440Z] [info] Starting backup: manual
+[2026-03-20T10:03:07.559Z] [info] Backup completed: master-openclaw_manual_2026-03-20T10-03-07.tar.gz
+[2026-03-20T10:04:01.464Z] [info] Starting backup: auto
+[2026-03-20T10:04:01.579Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-04-01.tar.gz
+[2026-03-20T10:05:01.600Z] [info] Starting backup: auto
+[2026-03-20T10:05:01.716Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-05-01.tar.gz
+[2026-03-20T10:05:37.769Z] [info] Starting backup: manual
+[2026-03-20T10:05:37.895Z] [info] Backup completed: master-openclaw_manual_2026-03-20T10-05-37.tar.gz
+[2026-03-20T10:06:01.737Z] [info] Starting backup: auto
+[2026-03-20T10:06:01.853Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-06-01.tar.gz
+[2026-03-20T10:07:01.873Z] [info] Starting backup: auto
+[2026-03-20T10:07:01.985Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-07-01.tar.gz
+[2026-03-20T10:08:02.006Z] [info] Starting backup: auto
+[2026-03-20T10:08:02.119Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-08-02.tar.gz
+[2026-03-20T10:09:01.140Z] [info] Starting backup: auto
+[2026-03-20T10:09:01.257Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-09-01.tar.gz
+[2026-03-20T10:09:45.508Z] [info] Starting backup: manual
+[2026-03-20T10:09:45.628Z] [info] Backup completed: master-openclaw_manual_2026-03-20T10-09-45.tar.gz
+[2026-03-20T10:10:01.298Z] [info] Starting backup: auto
+[2026-03-20T10:10:01.430Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-10-01.tar.gz
+[2026-03-20T10:11:01.458Z] [info] Starting backup: auto
+[2026-03-20T10:11:01.576Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-11-01.tar.gz
+[2026-03-20T10:12:01.604Z] [info] Starting backup: auto
+[2026-03-20T10:12:01.719Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-12-01.tar.gz
+[2026-03-20T10:13:01.747Z] [info] Starting backup: auto
+[2026-03-20T10:13:01.877Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-13-01.tar.gz
+[2026-03-20T10:14:01.921Z] [info] Starting backup: auto
+[2026-03-20T10:14:02.048Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-14-01.tar.gz
+[2026-03-20T10:15:01.075Z] [info] Starting backup: auto
+[2026-03-20T10:15:01.199Z] [info] Backup completed: master-openclaw_auto_2026-03-20T10-15-01.tar.gz
+[2026-03-20T12:50:22.887Z] [info] Starting backup: manual
+[2026-03-20T12:50:23.047Z] [info] Backup completed: master-openclaw_manual_2026-03-20T12-50-22.tar.gz
+[2026-03-20T12:50:49.650Z] [info] Starting backup: manual
+[2026-03-20T12:50:49.802Z] [info] Backup completed: master-openclaw_manual_2026-03-20T12-50-49.tar.gz
+[2026-03-20T12:51:47.782Z] [info] Starting backup: manual
+[2026-03-20T12:51:47.916Z] [info] Backup completed: master-openclaw_manual_2026-03-20T12-51-47.tar.gz
+[2026-03-20T12:53:49.094Z] [info] Starting backup: manual
+[2026-03-20T12:53:49.211Z] [info] Backup completed: master-openclaw_manual_2026-03-20T12-53-49.tar.gz
+[2026-03-20T12:58:49.686Z] [error] please enter user@ip
+[2026-03-20T12:58:51.836Z] [error] please enter user@ip
+[2026-03-20T12:58:52.172Z] [error] please enter user@ip
+[2026-03-20T12:58:52.359Z] [error] please enter user@ip
+[2026-03-20T12:58:52.608Z] [error] please enter user@ip
+[2026-03-20T12:58:52.817Z] [error] please enter user@ip
+[2026-03-20T12:58:58.038Z] [error] please enter user@ip
+[2026-03-20T12:59:05.284Z] [error] please enter user@ip
+[2026-03-20T13:04:35.993Z] [info] Starting backup: manual
+[2026-03-20T13:04:36.140Z] [info] Backup completed: master-openclaw_manual_2026-03-20T13-04-35.tar.gz
+[2026-03-20T13:04:36.150Z] [info] backup created: master-openclaw_manual_2026-03-20T13-04-35.tar.gz
+[2026-03-20T13:05:13.367Z] [info] Starting transfer to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:05:14.389Z] [info] Transfer completed to cloudm9n@192.168.10.151
+[2026-03-20T13:05:14.392Z] [info] transfer completed!
+[2026-03-20T13:07:00.502Z] [info] Starting transfer to cloudm9n@192.168.10.150:~/
+[2026-03-20T13:07:01.059Z] [error] Transfer failed: Command failed: sshpass -p 'P@ssw0rd' rsync -avzP --exclude='.git' --exclude='node_modules' --exclude='backups' --exclude='*.log' ~/.openclaw cloudm9n@192.168.10.150:~/
+Host key verification failed.
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:07:01.063Z] [error] Command failed: sshpass -p 'P@ssw0rd' rsync -avzP --exclude='.git' --exclude='node_modules' --exclude='backups' --exclude='*.log' ~/.openclaw cloudm9n@192.168.10.150:~/
+Host key verification failed.
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:08:36.603Z] [info] Starting transfer to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:08:37.596Z] [info] Transfer completed to cloudm9n@192.168.10.151
+[2026-03-20T13:08:37.599Z] [info] transfer completed: Transferred to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:09:52.995Z] [info] Starting transfer to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:09:57.594Z] [error] Transfer failed: Command failed: sshpass -p 'ญ๑หหไจพก' rsync -avzP --exclude='.git' --exclude='node_modules' --exclude='backups' --exclude='*.log' ~/.openclaw cloudm9n@192.168.10.151:~/
+Permission denied, please try again.
+Permission denied, please try again.
+cloudm9n@192.168.10.151: Permission denied (publickey,password).
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:09:57.599Z] [error] Command failed: sshpass -p 'ญ๑หหไจพก' rsync -avzP --exclude='.git' --exclude='node_modules' --exclude='backups' --exclude='*.log' ~/.openclaw cloudm9n@192.168.10.151:~/
+Permission denied, please try again.
+Permission denied, please try again.
+cloudm9n@192.168.10.151: Permission denied (publickey,password).
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:11:27.442Z] [info] Starting transfer to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:11:28.404Z] [info] Transfer completed to cloudm9n@192.168.10.151
+[2026-03-20T13:11:28.407Z] [info] transfer completed: Transferred to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:11:35.911Z] [info] Starting transfer to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:11:38.528Z] [error] Transfer failed: Command failed: sshpass -p 'P@ssw0rd222' rsync -avzP --exclude='.git' --exclude='node_modules' --exclude='backups' --exclude='*.log' ~/.openclaw cloudm9n@192.168.10.151:~/
+Permission denied, please try again.
+Permission denied, please try again.
+cloudm9n@192.168.10.151: Permission denied (publickey,password).
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:11:38.531Z] [error] Command failed: sshpass -p 'P@ssw0rd222' rsync -avzP --exclude='.git' --exclude='node_modules' --exclude='backups' --exclude='*.log' ~/.openclaw cloudm9n@192.168.10.151:~/
+Permission denied, please try again.
+Permission denied, please try again.
+cloudm9n@192.168.10.151: Permission denied (publickey,password).
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:13:31.023Z] [info] Starting transfer to cloum9n@192.168.10.151:~/
+[2026-03-20T13:13:34.592Z] [error] Transfer failed: Command failed: sshpass -p 'P@ssw0rd' rsync -avzP --exclude='.git' --exclude='node_modules' --exclude='backups' --exclude='*.log' ~/.openclaw cloum9n@192.168.10.151:~/
+Permission denied, please try again.
+Permission denied, please try again.
+cloum9n@192.168.10.151: Permission denied (publickey,password).
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:13:34.597Z] [error] Command failed: sshpass -p 'P@ssw0rd' rsync -avzP --exclude='.git' --exclude='node_modules' --exclude='backups' --exclude='*.log' ~/.openclaw cloum9n@192.168.10.151:~/
+Permission denied, please try again.
+Permission denied, please try again.
+cloum9n@192.168.10.151: Permission denied (publickey,password).
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:14:28.183Z] [info] Starting transfer to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:14:29.164Z] [info] Transfer completed to cloudm9n@192.168.10.151
+[2026-03-20T13:14:29.167Z] [info] transfer completed: Transferred to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:14:34.548Z] [info] Starting transfer to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:14:37.167Z] [error] Transfer failed: Command failed: sshpass -p '******' rsync -avzP --exclude='.git' --exclude='node_modules' --exclude='backups' --exclude='*.log' ~/.openclaw cloudm9n@192.168.10.151:~/
+Permission denied, please try again.
+Permission denied, please try again.
+cloudm9n@192.168.10.151: Permission denied (publickey,password).
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:14:37.170Z] [error] Command failed: sshpass -p '******' rsync -avzP --exclude='.git' --exclude='node_modules' --exclude='backups' --exclude='*.log' ~/.openclaw cloudm9n@192.168.10.151:~/
+Permission denied, please try again.
+Permission denied, please try again.
+cloudm9n@192.168.10.151: Permission denied (publickey,password).
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:17:17.836Z] [info] Starting transfer to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:17:18.742Z] [info] Transfer completed to cloudm9n@192.168.10.151
+[2026-03-20T13:17:18.748Z] [info] transfer completed: Transferred to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:17:27.593Z] [info] Starting transfer to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:17:32.235Z] [error] Transfer failed: Command failed: sshpass -p '******' rsync -avzP --exclude=.git --exclude=node_modules --exclude=backups --exclude=*.log --exclude='*.log' --exclude='*.tmp' --exclude='*.temp' --exclude='*.cache' --exclude='*.bak' --exclude='_bak' --exclude='_bak/*' --exclude='*.DS_Store' --exclude='Thumbs.db' --exclude='Thumbs.db/*' --exclude='*.log' --exclude='*.tmp' --exclude='backup' --exclude='backup/*' --exclude='backups' --exclude='backups/*' --exclude='temp_*' ~/.openclaw cloudm9n@192.168.10.151:~/
+Permission denied, please try again.
+Permission denied, please try again.
+cloudm9n@192.168.10.151: Permission denied (publickey,password).
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:17:32.238Z] [error] Command failed: sshpass -p '******' rsync -avzP --exclude=.git --exclude=node_modules --exclude=backups --exclude=*.log --exclude='*.log' --exclude='*.tmp' --exclude='*.temp' --exclude='*.cache' --exclude='*.bak' --exclude='_bak' --exclude='_bak/*' --exclude='*.DS_Store' --exclude='Thumbs.db' --exclude='Thumbs.db/*' --exclude='*.log' --exclude='*.tmp' --exclude='backup' --exclude='backup/*' --exclude='backups' --exclude='backups/*' --exclude='temp_*' ~/.openclaw cloudm9n@192.168.10.151:~/
+Permission denied, please try again.
+Permission denied, please try again.
+cloudm9n@192.168.10.151: Permission denied (publickey,password).
+rsync error: unexplained error (code 255) at rsync.c(716) [sender=3.2.7]
+
+[2026-03-20T13:47:48.628Z] [info] Starting transfer to cloudm9n@192.168.10.151:~/
+[2026-03-20T13:47:48.629Z] [info] Openclaw already installed, skipping...
+[2026-03-20T13:47:48.629Z] [info] Transferring files...
+[2026-03-20T13:47:49.609Z] [info] Files transferred successfully
+[2026-03-20T13:47:49.609Z] [info] Updating config paths...
+[2026-03-20T13:47:49.965Z] [info] Config paths updated
+[2026-03-20T13:47:49.965Z] [info] Changing ownership...
+[2026-03-20T13:47:50.787Z] [info] Ownership changed
+[2026-03-20T13:47:50.787Z] [info] Running openclaw doctor --fix...
+[2026-03-20T13:47:51.156Z] [warn] Doctor --fix failed, continuing...
+[2026-03-20T13:47:51.156Z] [info] Doctor --fix completed
+[2026-03-20T13:47:51.156Z] [info] Checking OS for gateway restart...
+[2026-03-20T13:47:51.564Z] [warn] Gateway restart failed, continuing...
+[2026-03-20T13:47:51.565Z] [info] Gateway restarted
+[2026-03-20T13:47:51.565Z] [info] Transfer completed to cloudm9n@192.168.10.151
+[2026-03-20T13:47:51.569Z] [info] transfer completed: Transferred to cloudm9n@192.168.10.151:~/
+[2026-03-20T14:01:54.759Z] [info] deleted: master-openclaw_manual_2026-03-20T13-04-35.tar.gz
+[2026-03-20T14:01:56.977Z] [info] deleted: master-openclaw_manual_2026-03-20T12-53-49.tar.gz
+[2026-03-20T14:01:59.157Z] [info] deleted: master-openclaw_manual_2026-03-20T12-51-47.tar.gz
+[2026-03-20T14:02:11.574Z] [info] schedule added
+[2026-03-20T14:03:01.618Z] [info] Starting backup: auto
+[2026-03-20T14:03:01.741Z] [info] Backup completed: master-openclaw_auto_2026-03-20T14-03-01.tar.gz
+[2026-03-20T14:04:01.765Z] [info] Starting backup: auto
+[2026-03-20T14:04:01.885Z] [info] Backup completed: master-openclaw_auto_2026-03-20T14-04-01.tar.gz
+[2026-03-20T14:05:01.908Z] [info] Starting backup: auto
+[2026-03-20T14:05:02.026Z] [info] Backup completed: master-openclaw_auto_2026-03-20T14-05-01.tar.gz

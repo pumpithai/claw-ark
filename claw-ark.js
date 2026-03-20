@@ -982,7 +982,7 @@ const server = http.createServer(async (req, res) => {
         
         // Serve static files
         let filepath = pathname === '/' 
-            ? path.join(__dirname, 'backup-web.html')
+            ? path.join(__dirname, 'index.html')
             : path.join(__dirname, pathname);
         
         if (fs.existsSync(filepath) && fs.statSync(filepath).isFile()) {

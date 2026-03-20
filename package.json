@@ -1,10 +1,10 @@
 {
-  "name": "openclaw-backup",
+  "name": "claw-ark",
   "version": "1.0.0",
   "description": "OpenClaw Backup & Restore Web UI",
-  "main": "backup-server.js",
+  "main": "claw-ark.js",
   "scripts": {
-    "start": "node backup-server.js"
+    "start": "node claw-ark.js"
   },
   "keywords": ["openclaw", "backup"],
   "author": "",

@@ -1,5 +1,5 @@
 {
-  "maxBackups": 10,
+  "maxBackups": 20,
   "maxBackupsSize": 0,
   "patterns": [
     ".log",
@@ -16,12 +16,5 @@
     "backups",
     "temp_*"
   ],
-  "schedules": [
-    {
-      "id": "backup_1774000478971",
-      "cron": "* * * * *",
-      "enabled": true,
-      "created": "2026-03-20T09:54:38.971Z"
-    }
-  ]
+  "schedules": []
 }
