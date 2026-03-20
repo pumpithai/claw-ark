@@ -302,8 +302,15 @@
         
         .tag-input::placeholder { color: var(--text-dim); }
         
+        .empty-state {
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
         .upload-zone {
-            border: 2px dashed var(--border);
             border-radius: 8px;
             padding: 20px;
             text-align: center;
@@ -311,7 +318,6 @@
             transition: all 0.2s;
         }
         
-        .upload-zone:hover { border-color: var(--accent); background: rgba(137, 180, 250, 0.05); }
         .upload-zone.dragover { border-color: var(--green); background: rgba(166, 227, 161, 0.1); }
         
         .upload-zone input { display: none; }
@@ -685,7 +691,7 @@
         </div>
         
         <footer>
-            openclaw-backup v1.0 | dev by pumpith
+            openclaw-backup v1.0 | code by <a href="https://www.facebook.com/pumpith" style="color: var(--cyan);">pumpith</a>
         </footer>
     </div>
 

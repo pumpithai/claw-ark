@@ -14,14 +14,14 @@
     "*.tmp",
     "backup",
     "backups",
-    "*temp*"
+    "temp_*"
   ],
   "schedules": [
     {
-      "id": "backup_1773940726616",
+      "id": "backup_1774000478971",
       "cron": "* * * * *",
       "enabled": true,
-      "created": "2026-03-19T17:18:46.616Z"
+      "created": "2026-03-20T09:54:38.971Z"
     }
   ]
 }
