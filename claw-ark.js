@@ -485,7 +485,7 @@ function syncCrontab(schedules) {
     }
     
     const lines = currentCrontab.split('\n').filter(line => 
-        !line.includes('openclaw-backup.sh') && !line.includes('/api/backup/create')
+        !line.includes('claw-ark.sh') && !line.includes('/api/backup/create')
     );
     
     // Add new schedules (use curl to call API for proper cleanup)
