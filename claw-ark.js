@@ -424,19 +424,23 @@ async function restoreBackup(filename) {
         }
         
         try {
-            restoreStatus.message = 'Running openclaw doctor --fix...';
-            restoreStatus.progress = 94;
-            await execPromise('openclaw doctor --fix');
-            
             restoreStatus.message = 'Installing gateway...';
-            restoreStatus.progress = 96;
+            restoreStatus.progress = 90;
             await execPromise('openclaw gateway install');
+            
+            restoreStatus.message = 'Restarting gateway...';
+            restoreStatus.progress = 94;
+            await execPromise('openclaw gateway restart');
             
             if (process.platform !== 'darwin') {
                 restoreStatus.message = 'Starting gateway service...';
-                restoreStatus.progress = 98;
+                restoreStatus.progress = 96;
                 await execPromise('systemctl --user start openclaw-gateway.service');
             }
+            
+            restoreStatus.message = 'Running openclaw doctor --fix...';
+            restoreStatus.progress = 98;
+            await execPromise('openclaw doctor --fix');
         } catch (e) {
             log('warn', `Gateway setup skipped: ${e.message}`);
         }
@@ -708,15 +712,15 @@ const server = http.createServer(async (req, res) => {
                     }
                     log('info', 'Ownership changed');
                     
-                    // Step 4: Run openclaw doctor --fix
-                    log('info', 'Running openclaw doctor --fix...');
+                    // Step 4: Install gateway
+                    log('info', 'Installing gateway...');
                     try {
-                        const doctorCmd = `sshpass -p '${password}' ssh ${target} "openclaw doctor --fix"`;
-                        await execPromise(doctorCmd);
+                        const installCmd = `sshpass -p '${password}' ssh ${target} "openclaw gateway install"`;
+                        await execPromise(installCmd);
                     } catch (e) {
-                        log('warn', 'Doctor --fix failed, continuing...');
+                        log('warn', 'Gateway install failed, continuing...');
                     }
-                    log('info', 'Doctor --fix completed');
+                    log('info', 'Gateway installed');
                     
                     // Step 5: Restart gateway
                     log('info', 'Checking OS for gateway restart...');
@@ -735,6 +739,16 @@ const server = http.createServer(async (req, res) => {
                         log('warn', 'Gateway restart failed, continuing...');
                     }
                     log('info', 'Gateway restarted');
+                    
+                    // Step 6: Run openclaw doctor --fix
+                    log('info', 'Running openclaw doctor --fix...');
+                    try {
+                        const doctorCmd = `sshpass -p '${password}' ssh ${target} "openclaw doctor --fix"`;
+                        await execPromise(doctorCmd);
+                    } catch (e) {
+                        log('warn', 'Doctor --fix failed, continuing...');
+                    }
+                    log('info', 'Doctor --fix completed');
                     
                     log('info', `Transfer completed to ${target}`);
                     res.writeHead(200, { 'Content-Type': 'application/json' });
