@@ -662,7 +662,7 @@ const server = http.createServer(async (req, res) => {
                     if (!openclawInstalled) {
                         log('info', 'Installing openclaw on remote...');
                         try {
-                            const installCmd = `sshpass -p '${password}' ssh ${target} "npm install -g openclaw"`;
+                            const installCmd = `sshpass -p '${password}' ssh -o StrictHostKeyChecking=no ${target} "npm install -g openclaw"`;
                             await execPromise(installCmd);
                             log('info', 'Openclaw installed successfully');
                         } catch (e) {
@@ -678,7 +678,7 @@ const server = http.createServer(async (req, res) => {
                     
                     // Step 1: Transfer files
                     log('info', 'Transferring files...');
-                    const rsyncCmd = `sshpass -p '${password}' rsync -avzP ${excludeOpts} ~/.openclaw ${target}:${destPath}`;
+                    const rsyncCmd = `sshpass -p '${password}' rsync -avzP -e "ssh -o StrictHostKeyChecking=no" ${excludeOpts} ~/.openclaw ${target}:${destPath}`;
                     try {
                         await execPromise(rsyncCmd);
                     } catch (e) {
@@ -693,7 +693,7 @@ const server = http.createServer(async (req, res) => {
                     // Step 2: Update config paths
                     log('info', 'Updating config paths...');
                     const remoteHome = destPath.replace('~', '/home/' + target.split('@')[0]);
-                    const updateCmd = `sshpass -p '${password}' ssh ${target} "sed -i 's|/home/[^/]*|${remoteHome}|g' ~/.openclaw/openclaw.json"`;
+                    const updateCmd = `sshpass -p '${password}' ssh -o StrictHostKeyChecking=no ${target} "sed -i 's|/home/[^/]*|${remoteHome}|g' ~/.openclaw/openclaw.json"`;
                     try {
                         await execPromise(updateCmd);
                     } catch (e) {
@@ -704,7 +704,7 @@ const server = http.createServer(async (req, res) => {
                     // Step 3: Change ownership
                     log('info', 'Changing ownership...');
                     const user = target.split('@')[0];
-                    const chownCmd = `sshpass -p '${password}' ssh ${target} "chown -R ${user}:${user} ${destPath.replace('~', '/home/' + user)}"`;
+                    const chownCmd = `sshpass -p '${password}' ssh -o StrictHostKeyChecking=no ${target} "chown -R ${user}:${user} ${destPath.replace('~', '/home/' + user)}"`;
                     try {
                         await execPromise(chownCmd);
                     } catch (e) {
@@ -715,7 +715,7 @@ const server = http.createServer(async (req, res) => {
                     // Step 4: Install gateway
                     log('info', 'Installing gateway...');
                     try {
-                        const installCmd = `sshpass -p '${password}' ssh ${target} "openclaw gateway install"`;
+                        const installCmd = `sshpass -p '${password}' ssh -o StrictHostKeyChecking=no ${target} "openclaw gateway install"`;
                         await execPromise(installCmd);
                     } catch (e) {
                         log('warn', 'Gateway install failed, continuing...');
@@ -730,10 +730,10 @@ const server = http.createServer(async (req, res) => {
                         
                         if (osOutput.includes('Darwin')) {
                             log('info', 'Restarting gateway (macOS)...');
-                            await execPromise(`sshpass -p '${password}' ssh ${target} "openclaw gateway restart"`);
+                            await execPromise(`sshpass -p '${password}' ssh -o StrictHostKeyChecking=no ${target} "openclaw gateway restart"`);
                         } else {
                             log('info', 'Restarting gateway (systemd)...');
-                            await execPromise(`sshpass -p '${password}' ssh ${target} "systemctl --user restart openclaw-gateway.service"`);
+                            await execPromise(`sshpass -p '${password}' ssh -o StrictHostKeyChecking=no ${target} "systemctl --user restart openclaw-gateway.service"`);
                         }
                     } catch (e) {
                         log('warn', 'Gateway restart failed, continuing...');
@@ -743,7 +743,7 @@ const server = http.createServer(async (req, res) => {
                     // Step 6: Run openclaw doctor --fix
                     log('info', 'Running openclaw doctor --fix...');
                     try {
-                        const doctorCmd = `sshpass -p '${password}' ssh ${target} "openclaw doctor --fix"`;
+                        const doctorCmd = `sshpass -p '${password}' ssh -o StrictHostKeyChecking=no ${target} "openclaw doctor --fix"`;
                         await execPromise(doctorCmd);
                     } catch (e) {
                         log('warn', 'Doctor --fix failed, continuing...');
